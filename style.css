@@ -506,20 +506,14 @@ nav .fa-solid{
     .contact-right{
         margin-left: 10%;
     }
-}
-#msg{
-    color: #61b752;
-    margin-top: -40px;
-    display: block;
-}
     .container {
     display: flex;
     justify-content: space-between; /* Espacio entre elementos */
     align-items: flex-start; /* Alineación superior */
     flex-wrap: wrap; /* Para responsividad */
-}
+    }
 
-.contact-left, .contact-right {
+    .contact-left, .contact-right {
     flex: 1;
     min-width: 300px; /* Evita que se encojan demasiado */
-}
+    }

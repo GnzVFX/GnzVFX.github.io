@@ -197,6 +197,14 @@ nav ul li a:hover::after{
     width: 50%;
 }
 /* -------------services------------- */
+    }
+#services{
+    width: 100%;
+    height: 100vh;
+    background-image: url(image/background2.png);
+    background-size: cover;
+    background-position: center;
+}
     .services-list div {
     background: rgb(34, 51, 67);
     padding: 40px;

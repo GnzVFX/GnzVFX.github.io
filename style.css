@@ -5,7 +5,7 @@
 
 /* Estilo del thumb para que parezca flotante */
 ::-webkit-scrollbar-thumb {
-    background-color: #080808; /* Color blanco con transparencia */
+    background-color: #346998; /* Color blanco con transparencia */
     border-radius: 10px; /* Bordes redondeados */
     border: 3px solid rgba(0, 0, 0, 0); /* Espaciado extra para que flote */
     background-clip: padding-box; /* Asegurar que el borde no afecte el color */
@@ -33,7 +33,7 @@ html{
 body {
     overflow-y: scroll; /* Habilita el scroll vertical */
     scrollbar-width: thin; /* Hace la barra más delgada (para Firefox) */
-    scrollbar-color: #888 #f1f1f1; /* Color de la barra y fondo */
+    scrollbar-color: #080808; /* Color de la barra y fondo */
 }
 }
 body{

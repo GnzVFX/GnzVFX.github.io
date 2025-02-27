@@ -13,7 +13,7 @@
 
 /* Cambio de color al pasar el cursor */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #0e1c29;
 }
 
 /* Configuración para Firefox */

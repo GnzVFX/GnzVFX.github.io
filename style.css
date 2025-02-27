@@ -5,7 +5,7 @@
 
 /* Fondo de la barra de desplazamiento */
 ::-webkit-scrollbar-track {
-    background: #f0f0f0; /* Color claro para el fondo */
+    background: transparent;  /* Color claro para el fondo */
     border-radius: 10px;
 }
 

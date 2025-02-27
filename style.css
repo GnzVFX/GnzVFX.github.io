@@ -200,7 +200,7 @@ nav ul li a:hover::after{
     body {
     margin: 0;
     padding: 0;
-    background: url('ruta-de-tu-imagen.jpg') no-repeat center center fixed;
+    background: url('image/background2.png') no-repeat center center fixed;
     background-size: cover;
 }
 

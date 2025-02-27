@@ -1,12 +1,20 @@
-/* Ocultar el fondo de la barra de desplazamiento */
-::-webkit-scrollbar-track {
-    background: transparent; /* Fondo completamente transparente */
+/* Estilizar la barra de desplazamiento en navegadores WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra */
 }
 
-/* Estilo del thumb (la barra que se mueve) */
+/* Eliminar cualquier fondo de la pista (track) */
+::-webkit-scrollbar-track {
+    background: none; /* Evita que aparezca un fondo oscuro */
+    margin: 0; /* Asegura que no haya espacios extra */
+}
+
+/* Hacer que el thumb (barra que se mueve) esté flotando */
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(136, 136, 136, 0.8); /* Color con algo de transparencia */
-    border-radius: 4px; /* Bordes redondeados */
+    background-color: rgba(136, 136, 136, 0.6); /* Color con transparencia */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid transparent; /* Truco para que parezca flotante */
+    background-clip: padding-box; /* Asegura que no se expanda el fondo */
 }
 
 /* Cambiar color al pasar el cursor */
@@ -17,7 +25,7 @@
 /* Firefox */
 body {
     scrollbar-width: thin; /* Hace la barra más delgada */
-    scrollbar-color: rgba(136, 136, 136, 0.8) transparent; /* Solo el thumb visible */
+    scrollbar-color: rgba(136, 136, 136, 0.6) transparent; /* Solo el thumb visible */
 }
 *{
     margin: 0;

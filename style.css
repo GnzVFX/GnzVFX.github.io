@@ -1,31 +1,31 @@
 /* Ajustar el tamaño de la barra de desplazamiento */
 ::-webkit-scrollbar {
-    width: 12px; /* Aumenta el ancho para que se note la separación */
+    width: 12px; /* Tamaño de la barra */
 }
 
-/* Hacer que el track (fondo) sea completamente transparente */
+/* Hacer que el fondo del track sea invisible */
 ::-webkit-scrollbar-track {
-    background: transparent;
-    margin: 4px; /* Agrega margen para separar del borde */
+    background: none !important; /* Asegurar que no tenga fondo */
+    margin: 5px; /* Separar la barra del borde */
 }
 
-/* Ajustar el thumb (barra que se mueve) para que flote */
+/* Estilo del thumb para que parezca flotante */
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(136, 136, 136, 0.6); /* Color con transparencia */
+    background-color: rgba(255, 255, 255, 0.5); /* Color blanco con transparencia */
     border-radius: 10px; /* Bordes redondeados */
-    border: 4px solid transparent; /* Espacio alrededor para la sensación de flotación */
-    background-clip: padding-box; /* Hace que el thumb respete el espacio */
+    border: 3px solid rgba(0, 0, 0, 0); /* Espaciado extra para que flote */
+    background-clip: padding-box; /* Asegurar que el borde no afecte el color */
 }
 
-/* Cambiar color cuando el usuario pasa el cursor */
+/* Cambio de color al pasar el cursor */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(85, 85, 85, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* Firefox */
+/* Configuración para Firefox */
 body {
-    scrollbar-width: thin; /* Hace la barra más delgada */
-    scrollbar-color: rgba(136, 136, 136, 0.6) transparent; /* Solo el thumb visible */
+    scrollbar-width: thin; /* Hacer la barra más delgada */
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* Thumb blanco y sin fondo */
 }
 *{
     margin: 0;

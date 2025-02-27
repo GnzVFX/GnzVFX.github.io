@@ -5,7 +5,7 @@
 
 /* Estilo del thumb para que parezca flotante */
 ::-webkit-scrollbar-thumb {
-    background-color: #346998; /* Color blanco con transparencia */
+    background-color: #19334a; /* Color blanco con transparencia */
     border-radius: 10px; /* Bordes redondeados */
     border: 3px solid rgba(0, 0, 0, 0); /* Espaciado extra para que flote */
     background-clip: padding-box; /* Asegurar que el borde no afecte el color */

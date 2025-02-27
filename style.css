@@ -6,6 +6,30 @@
 }
 html{
     scroll-behavior: smooth;
+
+body {
+    overflow-y: scroll; /* Habilita el scroll vertical */
+    scrollbar-width: thin; /* Hace la barra más delgada (para Firefox) */
+    scrollbar-color: #888 #f1f1f1; /* Color de la barra y fondo */
+}
+
+/* Personalizar scroll en navegadores basados en WebKit (Chrome, Edge, Safari) */
+body::-webkit-scrollbar {
+    width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo de la barra */
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #888; /* Color del scroll */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color cuando pasas el mouse */
+}
 }
 body{
     background: #080808;

@@ -3,12 +3,6 @@
     width: 12px; /* Tamaño de la barra */
 }
 
-/* Hacer que el fondo del track sea invisible */
-::-webkit-scrollbar-track {
-    background: none !important; /* Asegurar que no tenga fondo */
-    margin: 5px; /* Separar la barra del borde */
-}
-
 /* Estilo del thumb para que parezca flotante */
 ::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.5); /* Color blanco con transparencia */

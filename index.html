@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VFX Artist - GNZ</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="image/Logopag.ICO">
     <script src="https://kit.fontawesome.com/6cf57bfc06.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
 <div id="header">
     <div class="containter">
-                <div>
-    <video autoplay muted loop width="1220">
-        <source src="image/pag_video.webm" type="video/webm">
-    </video>
         <nav>
             <img src="image/Logo.png" class="logo">
             <ul id="sidemenu">
@@ -28,15 +23,17 @@
             </ul>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
-</div>
-        </div>
-    <!-- -------------DemoReel------------- -->
-</div>
         <div class="header-text">
             <p>VFX Artist</p>
             <h1>Hey there!, I'm <span><br>Chamorro Gonzalo</h1></span>
         </div>
     </div>
+</div>
+<!-- -------------DemoReel------------- -->
+<div>
+    <video autoplay muted loop width="1220">
+        <source src="image/pag_video.webm" type="video/webm">
+    </video>
 </div>
 <!-- -------------about------------- -->
 <div id="about">
@@ -65,7 +62,7 @@
                             <ul>
                                 <li><span>2024:</span><br>Instragram marinco's Drinks</li>
                                 <li><span>2023:</span><br>GAMMA 3D Modeling</li>
-                                <li><span>2023:</span><br>Assistant on set, VFX. Nitido Productora</li>
+                                <li><span>2023:</span><br>Assistant on set Nitido</li>
                                 <li><span>2022:</span><br>Animation REEL Pipons </li>
                                 <li><span>2020:</span><br>Youtube Intro History Mundial</li>
                             </ul>
@@ -182,6 +179,21 @@
                     <a href="https://www.behance.net/gallery/192594113/Future-Diorama" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
+            <div class="work">
+                <img src="image/Aaron_Swartz_(6723911369).jpg">
+                <div class="layer">
+                    <h3>Aaron Swartz (Docudrama)</h3>
+                    <p>Recreation of Aaron Swartz's story with a team of six individuals. My role was pivotal in editing, special effects (SFX), and visual effects (VFX), ensuring a compelling and authentic cinematic narrative.</p>
+                    <a href="https://www.behance.net/gallery/192659095/Aaron-Swartz-(Docudrama)" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/behind-the-game.jpg">
+                <div class="layer">
+                    <h3>Behind the game: Grand Theft Auto</h3>
+                    <p>This video editing project seamlessly merges the GTA San Andreas gaming universe with the reality of crime in the United States, employing stock footage to visually narrate how gaming elements intertwine with real-life gang scenarios. It explores the influence of fiction on our perception of society.</p>
+                    <a href="https://www.behance.net/gallery/192663561/Behind-the-game-Grand-Theft-Auto" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
         </div>
     </div>
 </div>
@@ -195,10 +207,19 @@
                 <p> <i class="fa-solid fa-phone"></i>+54 1145282546</p>
                 <div class="social-icons">
                     <a href="https://www.instagram.com/gnzchamorro/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/gonzalo-chamorro-0486462b8/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/gonzalo-chamorro-3565282b6/"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
-                <a href="image/MyCV-GonzaloChamorroEN.pdf" download class="btn btn2">Download CV</a>
+                <a href="image/MyCV-GonzaloChamorro.pdf" download class="btn btn2">Download CV</a>
             </div>
+        </div>
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
         </div>
     </div>
     <div class="copyright">
@@ -223,7 +244,6 @@
     }
 
 </script>
-
 <script>
 
    var sidemenu = document.getElementById("sidemenu")

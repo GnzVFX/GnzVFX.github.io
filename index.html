@@ -7,26 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="image/Logopag.ICO">
     <script src="https://kit.fontawesome.com/6cf57bfc06.js" crossorigin="anonymous"></script>
-    <style>
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .work img {
-            transition: transform 0.3s ease-in-out;
-        }
-        .work:hover img {
-            transform: scale(1.05);
-        }
-    </style>
 </head>
 <body>
-    <div id="header" class="fade-in">
+    
+<div id="header">
+    <div class="containter">
         <nav>
             <img src="image/Logo.png" class="logo">
             <ul id="sidemenu">
@@ -44,22 +29,229 @@
             <h1>Hey there!, I'm <span><br>Chamorro Gonzalo</h1></span>
         </div>
     </div>
-    <div class="fade-in" id="about">
-        <h1>About Me</h1>
-        <p>I'm Gonzalo Chamorro, a 19-year-old Argentine artist...</p>
+</div>
+    <!-- -------------DemoReel------------- -->
+<div>
+    <video autoplay muted loop width="1220">
+        <source src="image/pag_video.webm" type="video/webm">
+    </video>
+</div>
+<!-- -------------about------------- -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="image/userr.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="aboutme">About me</h1>
+                <div class="abouttext"><p>I'm Gonzalo Chamorro, a 19-year-old Argentine artist with a career marked by patience, perseverance, and responsibility in every project. From my beginnings at the age of 13 in digital art to my first paid opportunities as an animator and video editor, I have demonstrated my commitment and technical skills. With a constant pursuit of growth, each project is an opportunity to stand out and satisfy my clients, thanks to my analytical approach and my passion for learning and collaborating.</p>
+            </div>
+                      <div class="tab-titles">
+                          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                          <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                          <p class="tab-links" onclick="opentab('education')">Education</p>
+                      </div>
+                      <div class="tab-contents active-tab" id="skills">
+                          <ul>
+                              <li><span>Video editting:</span><br>Montage/Effects/SFX</li>
+                              <li><span>3D Models:</span><br>Modeling/Texturing/UVS</li>
+                              <li><span>Animation:</span><br>Products animation</li>
+                          </ul>
+                      </div>
+                      <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2024:</span><br>Instragram marinco's Drinks</li>
+                                <li><span>2023:</span><br>GAMMA 3D Modeling</li>
+                                <li><span>2023:</span><br>Assistant on set, VFX. Nitido Productora</li>
+                                <li><span>2022:</span><br>Animation REEL Pipons </li>
+                                <li><span>2020:</span><br>Youtube Intro History Mundial</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023 - Current:</span><br>Associate's degree in 3D Design and Visual Effects.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let elements = document.querySelectorAll(".fade-in");
-            let observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            }, { threshold: 0.2 });
-            elements.forEach(el => observer.observe(el));
-        });
-    </script>
+</div>
+<!-- -------------Services------------- -->
+<div id="services">
+    <div class="container">
+        <h1 class="services">Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-video"></i>
+                <h2>Edditing</h2>
+                <p>Creative editing services, SFX, intros, and seamless transitions. With a meticulous approach, I transform your ideas into captivating and professional visual productions that stand out on any platform.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-cube"></i>
+                <h2>3D Models</h2>
+                <p>Object modeling, from UV creation and texturing to material application. Additionally, performing "bake" for real-time rendering engines, ensuring optimal efficiency and visual quality for interactive projects.</p>
+            </div>
+            <div>
+                <i class="fa-brands fa-stack-overflow"></i>
+                <h2>Animation</h2>
+                <p>
+                    As a product and camera animator, I transform your concepts into dynamic visual experiences. Through animation techniques, I highlight the unique features of your products, delivering a compelling presentation.</p>
+            </div>
+        </div>
+        <img src="image/barradeprogramas.png" class="programas">
+    </div>
+</div> 
+<!-- -------------Portfolio------------- -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="mywork-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="image/BunkerDiarama.jpg">
+                <div class="layer">
+                    <h3>Bunker (Diarama)</h3>
+                    <p>We're developing a post-apocalyptic bunker for the third world war, meticulously crafting 3D models and materials to evoke a survivalist atmosphere, with attention to worn textures, strategic lighting, and highlighted focal points such as weapons and workbenches.</p>
+                    <a href="https://www.behance.net/gallery/192177837/Bunker-(Diarama)" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/VFXMarnico.jpg">
+                <div class="layer">
+                    <h3>Liquid explosion (REEL)</h3>
+                    <p>The project entailed producing visually stunning content for a bar, focusing on meticulous 3D modeling, texturing, and lighting to captivate a wider audience on social media platforms, thereby elevating the brand's visibility and appeal.</p>
+                    <a href="https://www.behance.net/gallery/191989977/Liquid-explosion-(REEL)" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/Fiat600.jpg">
+                <div class="layer">
+                    <h3>Fiat-600</h3>
+                    <p>3D modeling of the classic Fiat 600 based on detailed plans, with meticulous focus to achieve fidelity.</p>
+                    <a href="https://www.behance.net/gallery/192188357/Fiat-600" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/Hamburger.jpg">
+                <div class="layer">
+                    <h3>Local Burger (REEL)</h3>
+                    <p>In this audiovisual project, we aimed to attract more customers on social media by using visual effects (VFX) and 3D technology. We highlight the gastronomic offerings and unique experience of a fast-food establishment, employing visual effects to convey a compelling narrative that engages the audience. </p>
+                    <a href="https://www.behance.net/gallery/191980155/Local-Burger-(REEL)" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/MiniCooper.jpg">
+                <div class="layer">
+                    <h3>MiniCooper - 1967</h3>
+                    <p>This project focused on the detailed 3D modeling of a Mini Cooper, using reference images as a foundation. In addition to the precise modeling of the vehicle, necessary steps were taken to generate UV maps.</p>
+                    <a href="https://www.behance.net/gallery/192590863/MiniCooper-1967" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/gamma.jpg">
+                <div class="layer">
+                    <h3>GAMMA 3D Models</h3>
+                    <p>Gamma, a leading company in Argentina in the machinery, tools, and vehicles market. I had the opportunity to create detailed 3D models for their exhibition at Expoferretera. In this project, I developed their latest tools showcased at the fair, ensuring a captivating presentation of their innovative products on screens for the audience. </p>
+                    <a href="https://www.behance.net/gallery/192130595/GAMMA-3D-Models" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/NikeAirForce.jpg">
+                <div class="layer">
+                    <h3>Nike-AirForce</h3>
+                    <p>Modeling and texturing of the Nike Air Force, a precise recreation for advertising. Take a look at about the project.</p>
+                    <a href="https://www.behance.net/gallery/192206301/Nike-AirForce" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/Granada.jpg">
+                <div class="layer">
+                    <h3>Grenade 3D Model</h3>
+                    <p>The project involved creating a detailed 3D model of a grenade using visual references and optimization techniques such as Substance Painter's "bake", ensuring realism in offline rendering and efficiency in real-time applications like video games and VR experiences.</p>
+                    <a href="https://www.behance.net/gallery/192219395/Grenade" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/autoydiarama.png">
+                <div class="layer">
+                    <h3>Future Diorama</h3>
+                    <p>Futuristic dirama coming to life through reference images, blending innovative architecture and imaginative elements in 3D design.</p>
+                    <a href="https://www.behance.net/gallery/192594113/Future-Diorama" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -------------Contact------------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-contact">Contact me</h1>
+                <p> <i class="fa-solid fa-envelope"></i>gnzprods@gmail.com</p>
+                <p> <i class="fa-solid fa-phone"></i>+54 1145282546</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/gnzchamorro/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/gonzalo-chamorro-0486462b8/"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="image/MyCV-GonzaloChamorroEN.pdf" download class="btn btn2">Download CV</a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © GNZ.</p>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links")
+    var tabcontents = document.getElementsByClassName("tab-contents")
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+
+</script>
+
+<script>
+
+   var sidemenu = document.getElementById("sidemenu")
+
+   function openmenu(){
+    sidemenu.style.right = "0";
+   }
+   function closemenu(){
+    sidemenu.style.right = "-200px";
+   }
+
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzRfff2xwteoKnYneWpkN1hMUd1kyr27WZV9UWb9F1jpBB028tzgiQbZ338rpuq3hE1/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(funtion(),{
+                msg:innerHTML = ""
+            },5000)
+            form;reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
 </body>
 </html>

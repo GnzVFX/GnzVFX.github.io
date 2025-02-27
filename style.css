@@ -197,6 +197,26 @@ nav ul li a:hover::after{
     width: 50%;
 }
 /* -------------services------------- */
+    body {
+    margin: 0;
+    padding: 0;
+    background: url('ruta-de-tu-imagen.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#services {
+    width: 100%;
+    min-height: 100vh; /* Para asegurar que cubra toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7); /* Opcional, para oscurecer un poco el fondo */
+    color: white; /* Para asegurar buena visibilidad del texto */
+}
+
+.container {
+    text-align: center;
+}
 #services{
     padding: 5pc 0;
     margin-left: 5%;
@@ -207,7 +227,7 @@ nav ul li a:hover::after{
     grid-gap: 40px;
     margin-top: 60px;
     text-align: center;
-    margin-right: 30%;
+    margin-right: 70%;
 }
 .services-list div{
     background: rgb(34, 51, 67);

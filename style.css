@@ -223,6 +223,9 @@ nav ul li a:hover::after{
     background-size: cover;
     background-position: center;
 }
+.container{
+    margin-top: 10px
+        }
 .services-list {
     width: 30%; /* Antes 20%, ahora es más ancho para que los cuadros sean más pequeños */
     display: flex;

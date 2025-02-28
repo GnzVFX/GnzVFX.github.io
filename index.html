@@ -296,7 +296,23 @@
         .catch(error => console.error('Error!', error.message))
     })
 </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const serviceItems = document.querySelectorAll(".services-list div");
 
+    function checkVisibility() {
+        serviceItems.forEach((item) => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.9) {
+                item.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility(); // Ejecuta una vez al cargar
+});
+        </script>
 <script>
 const musicToggle = document.getElementById("music-toggle");
 const musicIcon = document.getElementById("music-icon");

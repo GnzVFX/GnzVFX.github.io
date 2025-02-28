@@ -283,6 +283,17 @@ nav ul li a:hover::after{
     background: rgb(29, 88, 139);
     transform: translateY(-10px);
 }
+.services-list div {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Cuando el div tenga la clase "visible", aparecerá */
+.services-list div.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
 .programas{
     width: 95%;
     height: auto;

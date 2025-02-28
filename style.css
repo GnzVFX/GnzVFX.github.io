@@ -242,9 +242,6 @@ nav ul li a:hover::after{
     opacity: 1;
     transform: translateX(0);
 }
-#services{
-    padding: 5pc 0;
-}
 .services-list {
     display: grid;
     grid-template-columns: 1fr; /* Solo una columna */

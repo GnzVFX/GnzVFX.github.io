@@ -225,7 +225,6 @@ nav ul li a:hover::after{
 }
 .services-list {
     width: 30%; /* Antes 20%, ahora es más ancho para que los cuadros sean más pequeños */
-    display: flex;
     flex-direction: column; /* Los elementos se apilan verticalmente */
     align-items: center; /* Centra los cuadros */
     gap: 30px; /* Espacio entre cuadros */

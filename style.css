@@ -255,6 +255,7 @@ nav ul li a:hover::after{
     margin-left: 10%; /* Centra el contenedor en la página */
 }
 .services-list div{
+    margin-top: 20px;
     background: rgb(34, 51, 67);
     padding: 40px;
     font-size: 13px;

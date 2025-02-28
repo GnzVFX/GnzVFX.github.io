@@ -223,7 +223,7 @@ nav ul li a:hover::after{
     background-size: cover;
     background-position: center;
 }
-    .services-list div {
+    .services div {
     background: rgb(34, 51, 67);
     padding: 40px;
     font-size: 13px;

@@ -223,25 +223,6 @@ nav ul li a:hover::after{
     background-size: cover;
     background-position: center;
 }
-    .services div {
-    background: rgb(34, 51, 67);
-    padding: 40px;
-    font-size: 13px;
-    font-weight: 300;
-    border-radius: 7px;
-    transition: background 0.5s, transform 0.5s;
-    
-    /* Oculta y posiciona los elementos fuera de la pantalla */
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* Cuando la clase 'visible' se agrega con JS, se activa la animación */
-.services div.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
 .services-list {
     width: 40%; /* Antes 20%, ahora es más ancho para que los cuadros sean más pequeños */
     display: flex;

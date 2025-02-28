@@ -353,7 +353,20 @@ video {
     background: rgb(29, 88, 139);
 }
 /* -------------Contact------------- */
-    
+    .contact-container {
+    display: flex;
+    align-items: center; /* Alinea los elementos verticalmente */
+    justify-content: space-between; /* Separa los elementos */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+.contact-left {
+    flex: 1;
+}
+
+.contact-right {
+    flex: 1;
+}
 .contact-left{
     flex-basis: 20%;
     margin-left: 8%;

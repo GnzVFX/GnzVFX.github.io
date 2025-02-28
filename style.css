@@ -231,7 +231,7 @@ nav ul li a:hover::after{
     display: grid;
     grid-template-columns: 1fr; /* Solo una columna */
     grid-gap: 40px;
-    margin-top: 60px;
+    margin-top: 30px;
     text-align: center;
     margin-right: 70%;
 }

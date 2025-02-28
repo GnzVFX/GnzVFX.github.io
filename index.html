@@ -307,7 +307,7 @@ let isPlaying = true; // Comenzar con la música activada
 // Iniciar la música al cargar la página
 window.addEventListener("load", () => {
     audio.play().catch(error => console.log("Autoplay bloqueado:", error));
-    musicIcon.src = "https://icons8.com/icon/102097/voice"; // Ícono de música encendida
+    musicIcon.src = "https://img.icons8.com/?size=100&id=102097&format=png&color=000000"; // Ícono de música encendida
 });
 
 // Alternar música al hacer clic
@@ -317,7 +317,7 @@ musicToggle.addEventListener("click", () => {
         musicIcon.src = "https://cdn-icons-png.flaticon.com/512/1828/1828774.png"; // Ícono de música apagada
     } else {
         audio.play();
-        musicIcon.src = "https://icons8.com/icon/102097/voice"; // Ícono de música encendida
+        musicIcon.src = "https://img.icons8.com/?size=100&id=102097&format=png&color=000000"; // Ícono de música encendida
     }
     isPlaying = !isPlaying;
 });

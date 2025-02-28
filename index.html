@@ -322,7 +322,7 @@ musicToggle.addEventListener("click", () => {
     isPlaying = !isPlaying;
 });
     window.addEventListener("load", () => {
-    audio.volume = 0.2; // Volumen al 20% (0.0 = silencio, 1.0 = máximo)
+    audio.volume = 0.1; // Volumen al 20% (0.0 = silencio, 1.0 = máximo)
     audio.play().catch(error => console.log("Autoplay bloqueado:", error));
 });
 </script>

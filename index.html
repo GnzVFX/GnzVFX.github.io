@@ -240,28 +240,6 @@
     function closemenu() {
         document.getElementById("sidemenu").style.right = "-200px";
     }
-</script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".services div");
-
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target); // Deja de observar después de animar
-                }
-            });
-        },
-        { threshold: 0.2 } // Se activa cuando el 20% del elemento es visible
-    );
-
-    elements.forEach(element => {
-        observer.observe(element);
-    });
-});
-        </script>
 
 <script>
 

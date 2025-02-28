@@ -251,8 +251,8 @@ nav ul li a:hover::after{
     grid-gap: 40px;
     margin-top: 30px;
     text-align: center;
-    margin-right: 70%;
-    margin-left: 20%;
+    margin-right: 60%;
+    margin-left: 10%;
 }
 .services-list div{
     background: rgb(34, 51, 67);

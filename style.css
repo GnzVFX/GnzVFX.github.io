@@ -244,7 +244,6 @@ nav ul li a:hover::after{
 }
 #services{
     padding: 5pc 0;
-    margin-left: 10%;
 }
 .services-list {
     display: grid;
@@ -253,6 +252,7 @@ nav ul li a:hover::after{
     margin-top: 30px;
     text-align: center;
     margin-right: 70%;
+    margin-left: 20%;
 }
 .services-list div{
     background: rgb(34, 51, 67);

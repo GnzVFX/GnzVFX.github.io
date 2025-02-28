@@ -296,13 +296,27 @@
         .catch(error => console.error('Error!', error.message))
     })
 </script>
-    <script>
-    const musicToggle = document.getElementById("music-toggle");
+    <div id="music-toggle">
+    <img id="music-icon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music Icon">
+</div>
+<audio id="background-music" loop>
+    <source src="URL_DE_TU_AUDIO.mp3" type="audio/mp3">
+</audio>
+
+<script>
+const musicToggle = document.getElementById("music-toggle");
 const musicIcon = document.getElementById("music-icon");
 const audio = document.getElementById("background-music");
 
-let isPlaying = false;
+let isPlaying = true; // Comenzar con la música activada
 
+// Iniciar la música al cargar la página
+window.addEventListener("load", () => {
+    audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+    musicIcon.src = "https://cdn-icons-png.flaticon.com/512/727/727245.png"; // Ícono de música encendida
+});
+
+// Alternar música al hacer clic
 musicToggle.addEventListener("click", () => {
     if (isPlaying) {
         audio.pause();
@@ -313,6 +327,6 @@ musicToggle.addEventListener("click", () => {
     }
     isPlaying = !isPlaying;
 });
-        </script>
+</script>
 </body>
 </html>

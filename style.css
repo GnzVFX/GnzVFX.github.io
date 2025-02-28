@@ -219,7 +219,7 @@ nav ul li a:hover::after{
 }
 
 /* Cuando la clase 'visible' se agrega con JS, se activa la animación */
-.services-list div.visible {
+.services div.visible {
     opacity: 1;
     transform: translateX(0);
 }

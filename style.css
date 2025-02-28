@@ -224,14 +224,12 @@ nav ul li a:hover::after{
     background-position: center;
 }
 .services-list {
-    height: 40%
     width: 30%; /* Antes 20%, ahora es más ancho para que los cuadros sean más pequeños */
     display: flex;
     flex-direction: column; /* Los elementos se apilan verticalmente */
     align-items: center; /* Centra los cuadros */
     gap: 30px; /* Espacio entre cuadros */
     margin-left: 10%; /* Centra el contenedor en la página */
-    margin-top: 5%
 }
 .services-list div{
     background: rgb(34, 51, 67);

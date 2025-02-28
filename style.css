@@ -243,6 +243,7 @@ nav ul li a:hover::after{
     transform: translateX(0);
 }
 .services-list {
+    width: 50%;
     display: grid;
     grid-template-columns: 1fr; /* Solo una columna */
     grid-gap: 40px;

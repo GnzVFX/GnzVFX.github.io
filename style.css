@@ -54,6 +54,17 @@ body{
     transition: top 0.3s ease-in-out;
     z-index: 1000;
 }
+    #header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7); /* Negro con transparencia */
+    transition: top 0.3s ease-in-out, background 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 15px 0; /* Espaciado opcional */
+}
+
 #header video {
     position: absolute;
     top: 50%;

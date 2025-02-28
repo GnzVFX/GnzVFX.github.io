@@ -218,6 +218,30 @@
     </div>
 </div>
     <script>
+    let lastScrollTop = 0;
+    let header = document.getElementById("header");
+
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            // Oculta la barra al hacer scroll hacia abajo
+            header.style.top = "-80px";  
+        } else {
+            // Muestra la barra al hacer scroll hacia arriba
+            header.style.top = "0";
+        }
+        lastScrollTop = scrollTop;
+    });
+
+    function openmenu() {
+        document.getElementById("sidemenu").style.right = "0";
+    }
+
+    function closemenu() {
+        document.getElementById("sidemenu").style.right = "-200px";
+    }
+</script>
+    <script>
     document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".services-list div");
 

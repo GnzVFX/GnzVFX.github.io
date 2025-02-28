@@ -45,16 +45,7 @@ body{
     height: 100vh;
     overflow: hidden;
 }
-#header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8); /* Ajusta el color si es necesario */
-    transition: top 0.3s ease-in-out;
-    z-index: 1000;
-}
-    #header {
+    #containter {
     position: fixed;
     width: 100%;
     top: 0;

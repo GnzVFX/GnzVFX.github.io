@@ -219,16 +219,16 @@
 </div>
     <script>
     let lastScrollTop = 0;
-    let containter = document.getElementById("containter");
+    let container = document.getElementById("container");
 
     window.addEventListener("scroll", function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         if (scrollTop > lastScrollTop) {
             // Oculta la barra al hacer scroll hacia abajo
-            containter.style.top = "-80px";  
+            container.style.top = "-80px";  
         } else {
             // Muestra la barra al hacer scroll hacia arriba
-            containter.style.top = "0";
+            container.style.top = "0";
         }
         lastScrollTop = scrollTop;
     });
@@ -243,7 +243,7 @@
 </script>
     <script>
     document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".services-list div");
+    const elements = document.querySelectorAll(".services div");
 
     const observer = new IntersectionObserver(
         (entries, observer) => {

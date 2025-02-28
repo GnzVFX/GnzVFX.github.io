@@ -296,5 +296,23 @@
         .catch(error => console.error('Error!', error.message))
     })
 </script>
+    <script>
+    const musicToggle = document.getElementById("music-toggle");
+const musicIcon = document.getElementById("music-icon");
+const audio = document.getElementById("background-music");
+
+let isPlaying = false;
+
+musicToggle.addEventListener("click", () => {
+    if (isPlaying) {
+        audio.pause();
+        musicIcon.src = "https://cdn-icons-png.flaticon.com/512/1828/1828774.png"; // Ícono de música apagada
+    } else {
+        audio.play();
+        musicIcon.src = "https://cdn-icons-png.flaticon.com/512/727/727245.png"; // Ícono de música encendida
+    }
+    isPlaying = !isPlaying;
+});
+        </script>
 </body>
 </html>

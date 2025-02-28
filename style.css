@@ -132,6 +132,29 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color: rgb(52, 105, 152);
 }
+    #music-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#music-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#music-icon {
+    width: 30px;
+    height: 30px;
+}
 /* -------------about------------- */
 #about{
     padding: 80px 0;

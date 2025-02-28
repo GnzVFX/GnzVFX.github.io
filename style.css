@@ -55,7 +55,15 @@ body{
     z-index: 1000;
     padding: 15px 0; /* Espaciado opcional */
 }
-
+nav {
+    background: linear-gradient(to bottom, #000000, #444444); /* De negro a gris oscuro */
+    padding: 15px 0;
+    position: fixed; /* Fija la barra en la parte superior */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
 #header video {
     position: absolute;
     top: 50%;

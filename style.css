@@ -243,13 +243,13 @@ nav ul li a:hover::after{
     transform: translateX(0);
 }
 .services-list {
-    width: 20%;
-    display: grid;
-    grid-template-columns: 1fr; /* Solo una columna */
-    grid-gap: 40px;
+    width: 40%; /* Antes 20%, ahora es más ancho para que los cuadros sean más pequeños */
+    display: flex;
+    flex-direction: column; /* Los elementos se apilan verticalmente */
+    align-items: center; /* Centra los cuadros */
+    gap: 30px; /* Espacio entre cuadros */
     text-align: center;
-    margin-right: 60%;
-    margin-left: 10%;
+    margin: 0 auto; /* Centra el contenedor en la página */
 }
 .services-list div{
     background: rgb(34, 51, 67);

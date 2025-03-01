@@ -295,10 +295,6 @@ nav ul li a:hover::after{
     transform: translateX(0);
 }
 .programas{
-    width: 95%;
-    height: auto;
-    display: block;
-    margin-top: 6%;
 }
 /* -------------DemoReel------------- */
 .DemoReel{

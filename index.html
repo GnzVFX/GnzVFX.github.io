@@ -230,146 +230,132 @@
     window.addEventListener("scroll", function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         if (scrollTop > lastScrollTop) {
-            // Oculta la barra al hacer scroll hacia abajo
             container.style.top = "-80px";  
         } else {
-            // Muestra la barra al hacer scroll hacia arriba
             container.style.top = "0";
         }
         lastScrollTop = scrollTop;
     });
 
+    var sidemenu = document.getElementById("sidemenu");
+
     function openmenu() {
-        document.getElementById("sidemenu").style.right = "0";
+        sidemenu.style.right = "0";
     }
 
     function closemenu() {
-        document.getElementById("sidemenu").style.right = "-200px";
+        sidemenu.style.right = "-200px";
     }
 </script>
+
 <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
 
-    var tablinks = document.getElementsByClassName("tab-links")
-    var tabcontents = document.getElementsByClassName("tab-contents")
-
-    function opentab(tabname){
-        for(tablink of tablinks){
+    function opentab(event, tabname) {
+        for (let tablink of tablinks) {
             tablink.classList.remove("active-link");
         }
-        for(tabcontent of tabcontents){
+        for (let tabcontent of tabcontents) {
             tabcontent.classList.remove("active-tab");
         }
-        event.currentTarget.classList.add("active-link")
-        document.getElementById(tabname).classList.add("active-tab")
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
     }
-
-</script>
-<script>
-
-   var sidemenu = document.getElementById("sidemenu")
-
-   function openmenu(){
-    sidemenu.style.right = "0";
-   }
-   function closemenu(){
-    sidemenu.style.right = "-200px";
-   }
-
 </script>
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzRfff2xwteoKnYneWpkN1hMUd1kyr27WZV9UWb9F1jpBB028tzgiQbZ338rpuq3hE1/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzRfff2xwteoKnYneWpkN1hMUd1kyr27WZV9UWb9F1jpBB028tzgiQbZ338rpuq3hE1/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg");
+
     form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(funtion(),{
-                msg:innerHTML = ""
-            },5000)
-            form;reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Mensaje enviado con éxito";
+                setTimeout(function() {
+                    msg.innerHTML = "";
+                }, 5000);
+                form.reset();
+            })
+            .catch(error => console.error('Error!', error.message));
+    });
 </script>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const serviceItems = document.querySelectorAll(".services-list div");
 
-    function checkVisibility() {
-        serviceItems.forEach((item) => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.9 && rect.bottom > 0) {
-                item.classList.add("visible");
-            } else {
-                item.classList.remove("visible");
-            }
-        });
-    }
-
-    window.addEventListener("scroll", checkVisibility);
-    checkVisibility(); // Ejecuta una vez al cargar
-});
-        </script>
 <script>
-const musicToggle = document.getElementById("music-toggle");
-const musicIcon = document.getElementById("music-icon");
-const audio = document.getElementById("background-music");
+    document.addEventListener("DOMContentLoaded", function () {
+        const serviceItems = document.querySelectorAll(".services-list div");
 
-let isPlaying = true; // Comenzar con la música activada
+        function checkVisibility() {
+            serviceItems.forEach((item) => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.9 && rect.bottom > 0) {
+                    item.classList.add("visible");
+                } else {
+                    item.classList.remove("visible");
+                }
+            });
+        }
 
-// Iniciar la música al cargar la página
-window.addEventListener("load", () => {
-    audio.play().catch(error => console.log("Autoplay bloqueado:", error));
-    musicIcon.src = "https://img.icons8.com/?size=100&id=102027&format=png&color=000000"; // Ícono de música encendida
-});
+        window.addEventListener("scroll", checkVisibility);
+        checkVisibility();
+    });
+</script>
 
-// Alternar música al hacer clic
-musicToggle.addEventListener("click", () => {
-    if (isPlaying) {
-        audio.pause();
-        musicIcon.src = "https://img.icons8.com/?size=100&id=102034&format=png&color=000000"; // Ícono de música apagada
-    } else {
-        audio.play();
-        musicIcon.src = "https://img.icons8.com/?size=100&id=102027&format=png&color=000000"; // Ícono de música encendida
-    }
-    isPlaying = !isPlaying;
-});
+<script>
+    const musicToggle = document.getElementById("music-toggle");
+    const musicIcon = document.getElementById("music-icon");
+    const audio = document.getElementById("background-music");
+
+    let isPlaying = true;
+
     window.addEventListener("load", () => {
-    audio.volume = 0.1; // Volumen al 20% (0.0 = silencio, 1.0 = máximo)
-    audio.play().catch(error => console.log("Autoplay bloqueado:", error));
-});
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    const modal = document.getElementById("videoModal");
-    const iframe = document.getElementById("vimeoFrame");
-    const closeBtn = document.querySelector(".close");
+        audio.volume = 0.1;
+        audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+        musicIcon.src = "https://img.icons8.com/?size=100&id=102027&format=png&color=000000";
+    });
 
-    document.querySelectorAll(".play-video").forEach(button => {
-        button.addEventListener("click", function(event) {
-            event.preventDefault();
-            const videoUrl = this.getAttribute("data-video");
-            iframe.src = videoUrl;  // Carga el video en el iframe
-            modal.style.display = "flex";
+    musicToggle.addEventListener("click", () => {
+        if (isPlaying) {
+            audio.pause();
+            musicIcon.src = "https://img.icons8.com/?size=100&id=102034&format=png&color=000000";
+        } else {
+            audio.play();
+            musicIcon.src = "https://img.icons8.com/?size=100&id=102027&format=png&color=000000";
+        }
+        isPlaying = !isPlaying;
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const modal = document.getElementById("videoModal");
+        const iframe = document.getElementById("vimeoFrame");
+        const closeBtn = document.querySelector(".close");
+
+        document.querySelectorAll(".play-video").forEach(button => {
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                const videoUrl = this.getAttribute("data-video");
+                iframe.src = videoUrl;
+                modal.style.display = "flex";
+            });
         });
-    });
 
-    closeBtn.addEventListener("click", function() {
-        modal.style.display = "none";
-        iframe.src = "";  // Detiene el video al cerrar
-    });
-
-    window.addEventListener("click", function(event) {
-        if (event.target === modal) {
+        closeBtn.addEventListener("click", function() {
             modal.style.display = "none";
             iframe.src = "";
-        }
+        });
+
+        window.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+                iframe.src = "";
+            }
+        });
     });
-});
-    </script>
+</script>
+
 </body>
 </html>

@@ -294,14 +294,12 @@ nav ul li a:hover::after{
     opacity: 1;
     transform: translateX(0);
 }
-.programas{
-    .programas {
-    width: 50%; /* Ajusta el tamaño según lo necesites */
-    max-width: 300px; /* Opcional: define un tamaño máximo */
+.programas {
+    width: 50%; /* Ajusta el tamaño según sea necesario */
+    max-width: 300px; /* Define un tamaño máximo */
     height: auto; /* Mantiene la proporción */
-    display: block; /* Asegura que la imagen no cause desbordes */
-    margin: 20px auto; /* Centra la imagen horizontalmente */
-}
+    display: block; /* Evita que la imagen flote */
+    margin: 10px auto; /* Centra la imagen debajo de la lista */
 }
 /* -------------DemoReel------------- */
 .DemoReel{

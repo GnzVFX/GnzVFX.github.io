@@ -295,7 +295,6 @@ nav ul li a:hover::after{
     transform: translateX(0);
 }
 .programas{
-    margin-top: 6%;
 }
 /* -------------DemoReel------------- */
 .DemoReel{

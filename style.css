@@ -325,8 +325,8 @@ video {
 }
 
 .modal iframe {
-    width: 80vw; /* Ocupar todo el ancho */
-    height: 80vh; /* Ocupar todo el alto */
+    width: 100vw; /* Ocupar todo el ancho */
+    height: 100vh; /* Ocupar todo el alto */
     max-width: none; /* Sin límite de ancho */
     max-height: none; /* Sin límite de alto */
 }

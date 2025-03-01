@@ -294,12 +294,6 @@ nav ul li a:hover::after{
     opacity: 1;
     transform: translateX(0);
 }
-.programas {
-    width: 100px; /* Ajusta el tamaño de la imagen */
-    height: auto; /* Mantiene la proporción */
-    display: block; /* Asegura que no flote */
-    margin-top: 5px; /* Espacio pequeño debajo de "Software & Tools" */
-}
 /* -------------DemoReel------------- */
 .DemoReel{
     text-align: center;

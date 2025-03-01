@@ -318,19 +318,17 @@ video {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+    background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
 .modal iframe {
-    width: 80vw; /* Ocupar el 80% del ancho de la pantalla */
-    height: 80vh; /* Ocupar el 80% del alto de la pantalla */
-    max-width: 1280px; /* Tamaño máximo */
-    max-height: 720px;
-    border-radius: 10px; /* Bordes redondeados opcionales */
+    width: 100vw; /* Ocupar todo el ancho */
+    height: 100vh; /* Ocupar todo el alto */
+    max-width: none; /* Sin límite de ancho */
+    max-height: none; /* Sin límite de alto */
 }
 
 .close {

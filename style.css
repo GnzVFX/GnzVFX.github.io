@@ -1,3 +1,4 @@
+@@ -1,559 +1,570 @@
 /* Ajustar el tamaño de la barra de desplazamiento */
 ::-webkit-scrollbar {
     width: 12px; /* Tamaño de la barra */
@@ -310,7 +311,6 @@ video {
     display: block;
 }
 /* -------------Portfolio------------- */
-
 #portfolio{
     padding: 50px 0;
     margin-left: 4%;

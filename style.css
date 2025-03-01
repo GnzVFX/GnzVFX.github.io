@@ -325,6 +325,7 @@ video {
 }
 
 .modal iframe {
+    display: none;
     width: 80vw; /* Ocupa el 80% del ancho de la pantalla */
     height: 45vw; /* Mantiene la proporción de un video 16:9 */
     max-width: 800px; /* No se hace más grande que 800px */

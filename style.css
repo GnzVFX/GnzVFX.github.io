@@ -295,11 +295,10 @@ nav ul li a:hover::after{
     transform: translateX(0);
 }
 .programas {
-    width: 50%; /* Ajusta el tamaño según sea necesario */
-    max-width: 300px; /* Define un tamaño máximo */
+    width: 100px; /* Ajusta el tamaño de la imagen */
     height: auto; /* Mantiene la proporción */
-    display: block; /* Evita que la imagen flote */
-    margin: 10px auto; /* Centra la imagen debajo de la lista */
+    display: block; /* Asegura que no flote */
+    margin-top: 5px; /* Espacio pequeño debajo de "Software & Tools" */
 }
 /* -------------DemoReel------------- */
 .DemoReel{

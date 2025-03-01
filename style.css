@@ -325,8 +325,11 @@ video {
 }
 
 .modal iframe {
-    width: 100vw; /* Ocupar todo el ancho */
-    height: 100vh; /* Ocupar todo el alto */
+    width: 80vw; /* Ocupa el 80% del ancho de la pantalla */
+    height: 45vw; /* Mantiene la proporción de un video 16:9 */
+    max-width: 800px; /* No se hace más grande que 800px */
+    max-height: 450px; /* No se hace más grande que 450px */
+    border-radius: 10px; /* Bordes redondeados opcionales */
 }
 
 .close {

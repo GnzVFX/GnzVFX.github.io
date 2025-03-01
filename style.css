@@ -250,6 +250,13 @@ nav ul li a:hover::after {
     display: block;
 }
 
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    align-items: center; /* Centra los elementos */
+    text-align: center;
+}
+
 /* Ajustes finales */
 @media only screen and (max-width: 600px) {
     #header {

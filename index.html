@@ -343,15 +343,7 @@ musicToggle.addEventListener("click", () => {
     audio.volume = 0.1; // Volumen al 20% (0.0 = silencio, 1.0 = máximo)
     audio.play().catch(error => console.log("Autoplay bloqueado:", error));
 });
-</script>
-        <!-- Modal -->
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <iframe id="videoFrame" width="100%" height="400px" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("videoModal");

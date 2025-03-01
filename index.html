@@ -3,383 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VFX Artist - GNZ</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/6cf57bfc06.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="music-toggle">
-    <img id="music-icon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music Icon">
-</div>
-<audio id="background-music" loop>
-    <source src="image/[FREE] C.R.O X FRANKY STYLE TYPE BEAT - IMPERIO - Nari.mp3" type="audio/mp3">
-</audio>
-<div id="header">
-    <div class="containter">
-        <nav>
-            <img src="image/Logo.png" class="logo">
-            <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About me</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </nav>
-</div>
-                <video autoplay loop muted playsinline id="background-video">
-        <source src="image/videopag3.mp4" type="video/mp4">
-        <source src="image/videopag4.mp4" type="video/mp4">
-    </video>
-</div>
-    <!-- -------------Services------------- -->
-<div id="services">
-    <div class="container">
-        <div class="services-list">
-            <div>
-                <i class="fa-solid fa-video"></i>
-                <h2>Edditing</h2>
-                <p>Creative editing services, SFX, intros, and seamless transitions. With a meticulous approach, I transform your ideas into captivating and professional visual productions that stand out on any platform.</p>
-            </div>
-            <div>
-                <i class="fa-solid fa-cube"></i>
-                <h2>3D Models</h2>
-                <p>Object modeling, from UV creation and texturing to material application. Additionally, performing "bake" for real-time rendering engines, ensuring optimal efficiency and visual quality for interactive projects.</p>
-            </div>
-            <div>
-                <i class="fa-brands fa-stack-overflow"></i>
-                <h2>Animation</h2>
-                <p>
-                    As a product and camera animator, I transform your concepts into dynamic visual experiences. Through animation techniques, I highlight the unique features of your products, delivering a compelling presentation.</p>
-            </div>
-        </div>
+    <div id="sidemenu" class="sidemenu">
+        <button onclick="closemenu()">Cerrar Menú</button>
     </div>
-</div> 
-
-<!-- -------------about------------- -->
-<div id="about">
-    <div class="container">
-        <div class="row">
-            <div class="about-col-1">
-                <img src="image/userr.png">
-            </div>
-            <div class="about-col-2">
-                <h1 class="aboutme">About me</h1>
-                <div class="abouttext"><p>I'm Gonzalo Chamorro, a 19-year-old Argentine artist with a career marked by patience, perseverance, and responsibility in every project. From my beginnings at the age of 13 in digital art to my first paid opportunities as an animator and video editor, I have demonstrated my commitment and technical skills. With a constant pursuit of growth, each project is an opportunity to stand out and satisfy my clients, thanks to my analytical approach and my passion for learning and collaborating.</p>
-            </div>
-                      <div class="tab-titles">
-                          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                          <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                          <p class="tab-links" onclick="opentab('education')">Education</p>
-                      </div>
-                      <div class="tab-contents active-tab" id="skills">
-                          <ul>
-                              <li><span>Video editting:</span><br>Montage/Effects/SFX</li>
-                              <li><span>3D Models:</span><br>Modeling/Texturing/UVS</li>
-                              <li><span>Animation:</span><br>Products animation</li>
-                          </ul>
-                      </div>
-                      <div class="tab-contents" id="experience">
-                            <ul>
-                                <li><span>2024:</span><br>Instragram marinco's Drinks</li>
-                                <li><span>2023:</span><br>GAMMA 3D Modeling</li>
-                                <li><span>2023:</span><br>Assistant on set Nitido</li>
-                                <li><span>2022:</span><br>Animation REEL Pipons </li>
-                                <li><span>2020:</span><br>Youtube Intro History Mundial</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2023 - Current:</span><br>Associate's degree in 3D Design and Visual Effects.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <button onclick="openmenu()">Abrir Menú</button>
+    
+    <form id="contact-form" onsubmit="sendmail(event)">
+        <input type="text" id="name" name="name" placeholder="Nombre" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+        <span id="msg"></span>
+    </form>
+    
+    <div class="tab-links">
+        <button onclick="opentab('tab1')">Tab 1</button>
+        <button onclick="opentab('tab2')">Tab 2</button>
     </div>
-</div>
-<!-- -------------Portfolio------------- -->
-<div id="portfolio">
-    <div class="container">
-        <div class="work-list">
-            <div class="work">
-                <img src="image/BunkerDiarama.jpg">
-                <div class="layer">
-                    <h3>Bunker (Diarama)</h3>
-                    <p>We're developing a post-apocalyptic bunker for the third world war, meticulously crafting 3D models and materials to evoke a survivalist atmosphere, with attention to worn textures, strategic lighting, and highlighted focal points such as weapons and workbenches.</p>
-                    <a href="https://www.behance.net/gallery/192177837/Bunker-(Diarama)" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="image/VFXMarnico.jpg">
-                <div class="layer">
-                    <h3>Liquid explosion (REEL)</h3>
-                    <p>The project entailed producing visually stunning content for a bar, focusing on meticulous 3D modeling, texturing, and lighting to captivate a wider audience on social media platforms, thereby elevating the brand's visibility and appeal.</p>
-                    <a href="https://www.behance.net/gallery/191989977/Liquid-explosion-(REEL)" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="image/Fiat600.jpg">
-                <div class="layer">
-                    <h3>Fiat-600</h3>
-                    <p>3D modeling of the classic Fiat 600 based on detailed plans, with meticulous focus to achieve fidelity.</p>
-                    <a href="https://www.behance.net/gallery/192188357/Fiat-600" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="image/Hamburger.jpg">
-                <div class="layer">
-                    <h3>Local Burger (REEL)</h3>
-                    <p>In this audiovisual project, we aimed to attract more customers on social media by using visual effects (VFX) and 3D technology. We highlight the gastronomic offerings and unique experience of a fast-food establishment, employing visual effects to convey a compelling narrative that engages the audience. </p>
-                    <a href="https://www.behance.net/gallery/191980155/Local-Burger-(REEL)" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="image/MiniCooper.jpg">
-                <div class="layer">
-                    <h3>MiniCooper - 1967</h3>
-                    <p>This project focused on the detailed 3D modeling of a Mini Cooper, using reference images as a foundation. In addition to the precise modeling of the vehicle, necessary steps were taken to generate UV maps.</p>
-                    <a href="https://www.behance.net/gallery/192590863/MiniCooper-1967" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="image/gamma.jpg">
-                <div class="layer">
-                    <h3>GAMMA 3D Models</h3>
-                    <p>Gamma, a leading company in Argentina in the machinery, tools, and vehicles market. I had the opportunity to create detailed 3D models for their exhibition at Expoferretera. In this project, I developed their latest tools showcased at the fair, ensuring a captivating presentation of their innovative products on screens for the audience. </p>
-                    <a href="https://www.behance.net/gallery/192130595/GAMMA-3D-Models" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="image/NikeAirForce.jpg">
-                <div class="layer">
-                    <h3>Nike-AirForce</h3>
-                    <p>Modeling and texturing of the Nike Air Force, a precise recreation for advertising. Take a look at about the project.</p>
-                    <a href="https://www.behance.net/gallery/192206301/Nike-AirForce" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="image/Granada.jpg">
-                <div class="layer">
-                    <h3>Grenade 3D Model</h3>
-                    <p>The project involved creating a detailed 3D model of a grenade using visual references and optimization techniques such as Substance Painter's "bake", ensuring realism in offline rendering and efficiency in real-time applications like video games and VR experiences.</p>
-                    <a href="https://www.behance.net/gallery/192219395/Grenade" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="image/autoydiarama.png">
-                <div class="layer">
-                    <h3>Future Diorama</h3>
-                    <p>Futuristic dirama coming to life through reference images, blending innovative architecture and imaginative elements in 3D design.</p>
-                    <a href="https://www.behance.net/gallery/192594113/Future-Diorama" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="image/Aaron_Swartz_(6723911369).jpg">
-                <div class="layer">
-                    <h3>Aaron Swartz (Docudrama)</h3>
-                    <p>Recreation of Aaron Swartz's story with a team of six individuals. My role was pivotal in editing, special effects (SFX), and visual effects (VFX), ensuring a compelling and authentic cinematic narrative.</p>
-                    <a href="https://www.behance.net/gallery/192659095/Aaron-Swartz-(Docudrama)" target="_blank" class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="image/behind-the-game.jpg">
-                <div class="layer">
-                    <h3>Behind the game: Grand Theft Auto</h3>
-                    <p>This video editing project seamlessly merges the GTA San Andreas gaming universe with the reality of crime in the United States, employing stock footage to visually narrate how gaming elements intertwine with real-life gang scenarios. It explores the influence of fiction on our perception of society.</p>
- <a href="#" class="open-modal fa-solid fa-arrow-up-right-from-square"></a>
-    </div>
-</div>
-            <div id="vimeo-modal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <iframe id="vimeo-iframe" 
-                src="https://player.vimeo.com/video/1061459144" 
-                frameborder="0" 
-                allow="autoplay; fullscreen; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-    </div>
-</div>
-<!-- -------------Contact------------- -->
-<div id="contact">
-    <div class="container">
-        <div class="contact-container">
-            <div class="contact-left">
-                <h1 class="sub-contact">Contact me</h1>
-                <p><i class="fa-solid fa-envelope"></i>gnzprods@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i>+54 1145282546</p>
-                <div class="social-icons">
-                    <a href="https://www.instagram.com/gnzchamorro/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/gonzalo-chamorro-3565282b6/"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-                <a href="image/MyCV-GonzaloChamorro.pdf" download class="btn btn2">Download CV</a>
-            </div>
-
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
-        </div>
-    </div>
-</div>
-    <div class="copyright">
-        <p>Copyright © GNZ.</p>
-    </div>
-</div>
+    
+    <div id="tab1" class="tab-content">Contenido de Tab 1</div>
+    <div id="tab2" class="tab-content" style="display:none;">Contenido de Tab 2</div>
+    
     <script>
-    let lastScrollTop = 0;
-    let container = document.getElementById("container");
-
-    window.addEventListener("scroll", function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-            // Oculta la barra al hacer scroll hacia abajo
-            container.style.top = "-80px";  
-        } else {
-            // Muestra la barra al hacer scroll hacia arriba
-            container.style.top = "0";
+        function openmenu() {
+            document.getElementById("sidemenu").style.right = "0";
         }
-        lastScrollTop = scrollTop;
-    });
 
-    function openmenu() {
-        document.getElementById("sidemenu").style.right = "0";
-    }
-
-    function closemenu() {
-        document.getElementById("sidemenu").style.right = "-200px";
-    }
-</script>
-<script>
-
-    var tablinks = document.getElementsByClassName("tab-links")
-    var tabcontents = document.getElementsByClassName("tab-contents")
-
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
+        function closemenu() {
+            document.getElementById("sidemenu").style.right = "-200px";
         }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link")
-        document.getElementById(tabname).classList.add("active-tab")
-    }
 
-</script>
-<script>
-
-   var sidemenu = document.getElementById("sidemenu")
-
-   function openmenu(){
-    sidemenu.style.right = "0";
-   }
-   function closemenu(){
-    sidemenu.style.right = "-200px";
-   }
-
-</script>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzRfff2xwteoKnYneWpkN1hMUd1kyr27WZV9UWb9F1jpBB028tzgiQbZ338rpuq3hE1/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(funtion(),{
-                msg:innerHTML = ""
-            },5000)
-            form;reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-</script>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const serviceItems = document.querySelectorAll(".services-list div");
-
-    function checkVisibility() {
-        serviceItems.forEach((item) => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.9 && rect.bottom > 0) {
-                item.classList.add("visible");
-            } else {
-                item.classList.remove("visible");
+        function opentab(tabname) {
+            var tabs = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
             }
-        });
-    }
+            document.getElementById(tabname).style.display = "block";
+        }
 
-    window.addEventListener("scroll", checkVisibility);
-    checkVisibility(); // Ejecuta una vez al cargar
-});
-        </script>
-<script>
-const musicToggle = document.getElementById("music-toggle");
-const musicIcon = document.getElementById("music-icon");
-const audio = document.getElementById("background-music");
-
-let isPlaying = true; // Comenzar con la música activada
-
-// Iniciar la música al cargar la página
-window.addEventListener("load", () => {
-    audio.play().catch(error => console.log("Autoplay bloqueado:", error));
-    musicIcon.src = "https://img.icons8.com/?size=100&id=102027&format=png&color=000000"; // Ícono de música encendida
-});
-
-// Alternar música al hacer clic
-musicToggle.addEventListener("click", () => {
-    if (isPlaying) {
-        audio.pause();
-        musicIcon.src = "https://img.icons8.com/?size=100&id=102034&format=png&color=000000"; // Ícono de música apagada
-    } else {
-        audio.play();
-        musicIcon.src = "https://img.icons8.com/?size=100&id=102027&format=png&color=000000"; // Ícono de música encendida
-    }
-    isPlaying = !isPlaying;
-});
-    window.addEventListener("load", () => {
-    audio.volume = 0.1; // Volumen al 20% (0.0 = silencio, 1.0 = máximo)
-    audio.play().catch(error => console.log("Autoplay bloqueado:", error));
-});
-</script>
-        <script>
-        // Seleccionamos elementos
-const modal = document.getElementById("vimeo-modal");
-const openModalBtn = document.querySelector(".open-modal");
-const closeModalBtn = document.querySelector(".close");
-const iframe = document.getElementById("vimeo-iframe");
-
-// Función para abrir el modal
-openModalBtn.addEventListener("click", (e) => {
-    e.preventDefault(); // Evita que el enlace recargue la página
-    modal.style.display = "flex";
-});
-
-// Función para cerrar el modal
-closeModalBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-    iframe.src = iframe.src; // Reinicia el video
-});
-
-// Cerrar modal si se hace clic fuera del contenido
-window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
-        iframe.src = iframe.src;
-    }
-});
-        </script>
+        function sendmail(event) {
+            event.preventDefault();
+            var params = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("message").value,
+            };
+            
+            emailjs.send("service_id", "template_id", params)
+                .then(function(response) {
+                    console.log("Success!", response.status, response.text);
+                    document.getElementById("msg").innerHTML = "Mensaje enviado con éxito.";
+                    setTimeout(function() {
+                        document.getElementById("msg").innerHTML = "";
+                    }, 5000);
+                    document.getElementById("contact-form").reset();
+                }, function(error) {
+                    console.log("Failed...", error);
+                    document.getElementById("msg").innerHTML = "Error al enviar el mensaje.";
+                });
+        }
+    </script>
 </body>
 </html>

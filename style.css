@@ -295,6 +295,13 @@ nav ul li a:hover::after{
     transform: translateX(0);
 }
 .programas{
+    .programas {
+    width: 50%; /* Ajusta el tamaño según lo necesites */
+    max-width: 300px; /* Opcional: define un tamaño máximo */
+    height: auto; /* Mantiene la proporción */
+    display: block; /* Asegura que la imagen no cause desbordes */
+    margin: 20px auto; /* Centra la imagen horizontalmente */
+}
 }
 /* -------------DemoReel------------- */
 .DemoReel{

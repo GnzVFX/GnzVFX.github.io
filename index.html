@@ -401,23 +401,33 @@ function toggleSketchfab(button) {
   const isVisible = sketchfab.style.display === 'block';
 
   if (!isVisible) {
+    // Mostrar visor 3D y ocultar imagen
     img.style.display = 'none';
     sketchfab.style.display = 'block';
+
+    // Cambiar ícono a cruz
     icon.classList.remove('fa-eye');
     icon.classList.add('fa-xmark');
 
-    // Oculta el overlay mientras el 3D está activo
-    if (layer) layer.style.pointerEvents = 'none';
-    if (layer) layer.style.opacity = '0';
+    // Desactivar overlay
+    if (layer) {
+      layer.style.pointerEvents = 'none';
+      layer.style.opacity = '0';
+    }
   } else {
+    // Volver a imagen original
     img.style.display = 'block';
     sketchfab.style.display = 'none';
+
+    // Restaurar ícono del ojo
     icon.classList.remove('fa-xmark');
     icon.classList.add('fa-eye');
 
-    // Restaura el overlay
-    if (layer) layer.style.pointerEvents = 'auto';
-    if (layer) layer.style.opacity = '1';
+    // Reactivar overlay
+    if (layer) {
+      layer.style.pointerEvents = 'auto';
+      layer.style.opacity = '1';
+    }
   }
 }
 </script>

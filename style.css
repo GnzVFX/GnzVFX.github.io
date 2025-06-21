@@ -419,6 +419,12 @@ video {
 .btn:hover{
     background: rgb(29, 88, 139);
 }
+.media-container {
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
 /* -------------Contact------------- */
     .contact-container {
     display: flex;

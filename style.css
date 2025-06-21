@@ -422,13 +422,15 @@ video {
 .work .media-container {
   position: relative;
   width: 100%;
-  height: 200px; /* Ajustá esto según el tamaño que quieras */
+  aspect-ratio: 9/16;
   overflow: hidden;
-  border-radius: 10px;
 }
 
 .work .preview-image,
 .work .sketchfab-embed {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;

@@ -397,6 +397,7 @@ musicToggle.addEventListener("click", () => {
 </script>
 <script>
 function toggleSketchfab(button) {
+event.preventDefault(); // ← Esta línea evita que se recargue/suba
   const work = button.closest('.work');
   const img = work.querySelector('.preview-image');
   const sketchfab = work.querySelector('.sketchfab-embed');

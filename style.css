@@ -420,7 +420,7 @@ video {
     background: rgb(29, 88, 139);
 }
 .media-container {
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 16 / 9;
   width: 100%;
   position: relative;
   overflow: hidden;

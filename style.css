@@ -478,6 +478,9 @@ video {
   font-size: 16px;
 }
 
+.close-sketchfab i {
+  pointer-events: none; /* para que el clic llegue al botón */
+}
 /* -------------Contact------------- */
     .contact-container {
     display: flex;

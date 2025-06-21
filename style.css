@@ -422,10 +422,12 @@ video {
 .media-container {
   position: relative;
   width: 100%;
-  aspect-ratio: 1 / 1; /* Mantiene la proporción cuadrada como tu imagen */
+  padding-top: 130%; /* Altura relativa a mantener proporción (ajustá esto según tus imágenes) */
   overflow: hidden;
+  border-radius: 10px;
 }
 
+/* Imagen y Sketchfab se apilan en el mismo espacio */
 .preview-image,
 .sketchfab-embed {
   position: absolute;
@@ -435,6 +437,7 @@ video {
   height: 100%;
   object-fit: cover;
   border: none;
+  border-radius: 10px;
 }
 .layer .icon-buttons {
   display: flex;

@@ -396,6 +396,7 @@ function toggleSketchfab(button) {
   const img = work.querySelector('.preview-image');
   const sketchfab = work.querySelector('.sketchfab-embed');
   const icon = button.querySelector('i');
+  const layer = work.querySelector('.layer');
 
   const isVisible = sketchfab.style.display === 'block';
 
@@ -404,11 +405,19 @@ function toggleSketchfab(button) {
     sketchfab.style.display = 'block';
     icon.classList.remove('fa-eye');
     icon.classList.add('fa-xmark');
+
+    // Oculta el overlay mientras el 3D está activo
+    if (layer) layer.style.pointerEvents = 'none';
+    if (layer) layer.style.opacity = '0';
   } else {
     img.style.display = 'block';
     sketchfab.style.display = 'none';
     icon.classList.remove('fa-xmark');
     icon.classList.add('fa-eye');
+
+    // Restaura el overlay
+    if (layer) layer.style.pointerEvents = 'auto';
+    if (layer) layer.style.opacity = '1';
   }
 }
 </script>

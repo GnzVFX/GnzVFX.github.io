@@ -181,15 +181,20 @@
       frameborder="0" allowfullscreen
       allow="autoplay; fullscreen; xr-spatial-tracking"
       allowxr="true"
-      style="display: none; width: 100%; height: 100%;">
+      style="display: none;">
     </iframe>
+
+    <!-- Botón de cierre arriba a la derecha -->
+    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this)">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
 
   <div class="layer">
     <h3>Volkswagen Beetle classic - Aged texturing</h3>
-    <p>3D texturing of a classic Volkswagen Beetle...</p>
+    <p>3D texturing of a classic Volkswagen Beetle with a focus on realism and aging. Worn materials, rust, and dirt were applied.</p>
     <div class="icon-buttons">
-      <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
+      <a href="#" class="open-modal fa-solid fa-play" data-video="..."></a>
       <a href="#" onclick="toggleSketchfab(this)">
         <i class="fa-solid fa-eye"></i>
       </a>
@@ -395,38 +400,39 @@ function toggleSketchfab(button) {
   const work = button.closest('.work');
   const img = work.querySelector('.preview-image');
   const sketchfab = work.querySelector('.sketchfab-embed');
-  const icon = button.querySelector('i');
-  const layer = work.querySelector('.layer');
+  const overlay = work.querySelector('.layer');
+  const toggleIcon = work.querySelector('.icon-buttons .fa-eye, .fa-xmark');
+  const closeBtn = work.querySelector('.close-sketchfab');
 
   const isVisible = sketchfab.style.display === 'block';
 
   if (!isVisible) {
-    // Mostrar visor 3D y ocultar imagen
     img.style.display = 'none';
     sketchfab.style.display = 'block';
-
-    // Cambiar ícono a cruz
-    icon.classList.remove('fa-eye');
-    icon.classList.add('fa-xmark');
-
-    // Desactivar overlay
-    if (layer) {
-      layer.style.pointerEvents = 'none';
-      layer.style.opacity = '0';
+    if (overlay) {
+      overlay.style.pointerEvents = 'none';
+      overlay.style.opacity = '0';
+    }
+    if (toggleIcon) {
+      toggleIcon.classList.remove('fa-eye');
+      toggleIcon.classList.add('fa-xmark');
+    }
+    if (closeBtn) {
+      closeBtn.style.display = 'block';
     }
   } else {
-    // Volver a imagen original
     img.style.display = 'block';
     sketchfab.style.display = 'none';
-
-    // Restaurar ícono del ojo
-    icon.classList.remove('fa-xmark');
-    icon.classList.add('fa-eye');
-
-    // Reactivar overlay
-    if (layer) {
-      layer.style.pointerEvents = 'auto';
-      layer.style.opacity = '1';
+    if (overlay) {
+      overlay.style.pointerEvents = 'auto';
+      overlay.style.opacity = '1';
+    }
+    if (toggleIcon) {
+      toggleIcon.classList.remove('fa-xmark');
+      toggleIcon.classList.add('fa-eye');
+    }
+    if (closeBtn) {
+      closeBtn.style.display = 'none';
     }
   }
 }

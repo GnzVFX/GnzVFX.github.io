@@ -421,7 +421,7 @@ video {
 }
 .media-container {
   position: relative;
-  width: 300%;
+  width: 200%;
   aspect-ratio: 1 / 1; /* Mantiene la proporción cuadrada como tu imagen */
   overflow: hidden;
 }

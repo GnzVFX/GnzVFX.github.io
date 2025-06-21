@@ -425,6 +425,24 @@ video {
   position: relative;
   overflow: hidden;
 }
+.layer .icon-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.layer .icon-buttons a {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  color: #19334a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
 /* -------------Contact------------- */
     .contact-container {
     display: flex;

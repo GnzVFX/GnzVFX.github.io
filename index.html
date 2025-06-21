@@ -392,6 +392,16 @@ musicToggle.addEventListener("click", () => {
 });
 </script>
     <script>
+    function toggleSketchfab(el) {
+    const wrapper = el.closest('.layer').querySelector('.sketchfab-embed-wrapper');
+    if (wrapper.style.display === "none") {
+        wrapper.style.display = "block";
+    } else {
+        wrapper.style.display = "none";
+    }
+}
+</script>
+    <script>
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("vimeoModal");
     const iframe = document.getElementById("vimeoPlayer");

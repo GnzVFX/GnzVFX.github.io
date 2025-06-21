@@ -29,7 +29,7 @@ body {
 }
 html{
     scroll-behavior: smooth;
-
+}
 body {
     overflow-y: scroll; /* Habilita el scroll vertical */
     scrollbar-width: thin; /* Hace la barra más delgada (para Firefox) */
@@ -79,7 +79,7 @@ nav {
     color: white;
     text-align: center;
 }
-.containter{
+.container{
     padding:8px 5%;   
 }
 

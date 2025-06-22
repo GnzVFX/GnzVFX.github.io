@@ -577,38 +577,42 @@ form .btn2{
 nav .fa-solid{
     display: none;
 }
-@media only screen and (max-width: 600px) {
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 10px;
-}
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+  }
 
-.logo {
-  max-width: 150px;
-  height: auto;
-}
+  .logo {
+    margin: 0 auto;
+    max-width: 150px;
+    height: auto;
+  }
 
-/* Posiciona el menú hamburguesa a la derecha */
-nav .fa-bars {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  cursor: pointer;
-}
+  nav .fa-bars {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+  }
 
-/* Alinea también el ícono de cerrar dentro de ul si hace falta */
-#sidemenu .fa-xmark {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
-}
+  #sidemenu .fa-xmark,
+  nav ul .fa-xmark {
+    display: block;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
 
   nav ul {
     position: fixed;
@@ -618,7 +622,7 @@ nav .fa-bars {
     height: 100vh;
     background: rgb(29, 88, 139);
     padding-top: 60px;
-    z-index: 2;
+    z-index: 999;
     transition: right 0.5s;
     display: block;
   }
@@ -627,14 +631,6 @@ nav .fa-bars {
     display: block;
     margin: 25px;
     text-align: left;
-  }
-
-  nav ul .fa-xmark {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    cursor: pointer;
-    font-size: 24px;
   }
 
   .header-text {
@@ -647,98 +643,76 @@ nav .fa-bars {
     font-size: 30px;
     margin-bottom: 5px;
   }
-}
-  nav .fa-solid {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-  }
-}
-    nav ul{
-        background: rgb(29, 88, 139);
-        position: fixed;
-        top: 0;
-        right: -200px;
-        width: 200px;
-        height: 100vh;
-        padding-top: 50px;
-        z-index: 2;
-        transition: right 0.5s;
-    }
-    nav ul li{
-        display: block;
-        margin: 25px;
-    }
-    nav ul .fa-solid{
-        position: absolute;
-        top: 25px;
-        left: 25px;
-        cursor: pointer;
-    }
-    video {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-    .sub-tittle{
-        font-size: 40px;
-    }
-    .about-col-1, .about-col-2{
-        flex-basis: 90%;
-    }
-    .about-col-1{
-        margin-bottom: 30px;
-    }
-    .about-col-2{
-        margin-bottom: 14px  
-    }
-    .programas{
-        width: 95%;
-        height: auto;
-        display: block;
-        margin-top: 30px;
-    }
-    .tab-links{
-        font-size: 16px;
-        margin-right: 20px;
-    }
-    .aboutme{
-        align-items: center;
-        text-align: center;
-        margin-left: 8%;
-    }
-    .abouttext{
-        width: 100%;
-        height: auto;
-        display: block;
-        text-align: center;
-        margin-top: 7%;
-        margin-left: 5%;
-    }
-    .sub-title{
-        text-align: center;
-        margin-left: 5%;
-    }
-    .services{
-        size: 10px;
-        margin-left: 28%;
-    }
-    .mywork-title{
-        size: 5px;
-        margin-left: 29%;
-    }
-    .tab-titles{
-        margin-left: 20%;
-    }
-    .tab-contents{
-        text-align: center;
-        margin-left: 9%;
-  }
-@media (max-width: 768px) {
+
   #background-video {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
   }
+
+  .sub-tittle {
+    font-size: 40px;
+  }
+
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 90%;
+  }
+
+  .about-col-1 {
+    margin-bottom: 30px;
+  }
+
+  .about-col-2 {
+    margin-bottom: 14px;
+  }
+
+  .programas {
+    width: 95%;
+    height: auto;
+    display: block;
+    margin-top: 30px;
+  }
+
+  .tab-links {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+
+  .aboutme {
+    align-items: center;
+    text-align: center;
+    margin-left: 8%;
+  }
+
+  .abouttext {
+    width: 100%;
+    height: auto;
+    display: block;
+    text-align: center;
+    margin-top: 7%;
+    margin-left: 5%;
+  }
+
+  .sub-title {
+    text-align: center;
+    margin-left: 5%;
+  }
+
+  .services {
+    margin-left: 28%;
+  }
+
+  .mywork-title {
+    margin-left: 29%;
+  }
+
+  .tab-titles {
+    margin-left: 20%;
+  }
+
+  .tab-contents {
+    text-align: center;
+    margin-left: 9%;
+  }
 }
-    

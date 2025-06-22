@@ -261,7 +261,6 @@ nav ul li a:hover::after{
 /* -------------services------------- */
     }
 #services{
-    height: 100vh;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.8) 100%), 
                 url(image/background2.png);
     background-size: cover;

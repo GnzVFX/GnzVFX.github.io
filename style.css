@@ -167,6 +167,12 @@ nav ul li a:hover::after{
     width: 30px;
     height: 30px;
 }
+#music-toggle,
+.fa-bars {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* -------------about------------- */
 #about{
     padding: 80px 0;

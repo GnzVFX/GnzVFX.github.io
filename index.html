@@ -499,5 +499,25 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
          </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const logo = document.querySelector(".logo");
+  let lastScrollTop = 0;
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 50) {
+      // Scroll hacia abajo
+      logo.classList.add("scroll-up");
+    } else {
+      // Scroll hacia arriba
+      logo.classList.remove("scroll-up");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // evita valores negativos
+  });
+});
+</script>
 </body>
 </html>

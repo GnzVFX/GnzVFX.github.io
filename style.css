@@ -2,7 +2,12 @@
 ::-webkit-scrollbar {
     width: 12px; /* Tamaño de la barra */
 }
-
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
 /* Estilo del thumb para que parezca flotante */
 ::-webkit-scrollbar-thumb {
     background-color: #19334a; /* Color blanco con transparencia */

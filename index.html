@@ -525,5 +525,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const logo = document.querySelector(".logo");
+  const musicToggle = document.getElementById("music-toggle");
+  const menuIcon = document.querySelector(".fa-bars");
+  let lastScrollTop = 0;
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Mostrar logo cuando scrolleo hacia arriba
+    if (scrollTop > lastScrollTop && scrollTop > 50) {
+      // Hacia abajo
+      logo.classList.remove("scroll-down");
+      logo.classList.add("scroll-up");
+
+      // Mostrar íconos con animaciones
+      if (!musicToggle.classList.contains("visible")) {
+        musicToggle.classList.add("visible");
+      }
+      if (!menuIcon.classList.contains("visible")) {
+        menuIcon.classList.add("visible");
+      }
+
+    } else {
+      // Hacia arriba
+      logo.classList.remove("scroll-up");
+      logo.classList.add("scroll-down");
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+});
+</script>        
 </body>
 </html>

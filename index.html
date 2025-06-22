@@ -29,10 +29,9 @@
             <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
 </div>
-<video autoplay loop muted playsinline id="background-video">
-  <source id="video-source" type="video/mp4">
-</video>
-
+                <video autoplay loop muted playsinline id="background-video">
+        <source src="image/videopag4.mp4" type="video/mp4">
+    </video>
 </div>
     <!-- -------------Services------------- -->
 <div id="services">
@@ -276,21 +275,6 @@
         <p>Copyright © GNZ.</p>
     </div>
 </div>
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("background-video");
-    const source = document.getElementById("video-source");
-
-    if (window.innerWidth <= 768) {
-      source.src = "image/PagVideo_Vertical.mp4"; // Versión vertical
-    } else {
-      source.src = "image/videopag4.mp4"; // Versión horizontal
-    }
-
-    video.load(); // Actualiza el video después de asignar el src
-  });
-</script>
-
     <script>
     let lastScrollTop = 0;
     let container = document.getElementById("container");

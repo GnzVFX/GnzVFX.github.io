@@ -583,14 +583,18 @@ nav .fa-solid{
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 60px; /* Asegura espacio para el logo */
   }
 
   .logo {
     position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
+    transform: translate(-50%, -50%);
     width: 120px;
+    height: auto;
+    margin: 0;
+    z-index: 2;
   }
 
   nav .fa-bars {
@@ -601,7 +605,9 @@ nav .fa-solid{
     transform: translateY(-50%);
     font-size: 25px;
     z-index: 3;
+    color: white;
   }
+}
 
 
   nav ul {

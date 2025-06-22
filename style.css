@@ -598,6 +598,7 @@ form .btn2{
     font-size: 28px;
     z-index: 1000;
     cursor: pointer;
+    color: #19334a;
   }
 
   #sidemenu .fa-xmark,

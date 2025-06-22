@@ -590,6 +590,8 @@ nav .fa-solid{
     .logo{
         width: 25%;
         margin-top: 2%;
+        margin: 0 auto; /* Centrado automático */
+        display: block;
     }
     nav .fa-solid{
         display: block;

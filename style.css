@@ -791,4 +791,41 @@ nav .fa-bars {
 .logo.scroll-down {
   animation: slideDownLogo 0.4s forwards ease-out;
 }
+    @keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+#music-toggle, .fa-bars {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Aparecen con animación cuando se hace scroll */
+#music-toggle.visible {
+  animation: slideInLeft 0.5s forwards ease-out;
+  pointer-events: auto;
+}
+
+.fa-bars.visible {
+  animation: slideInRight 0.5s forwards ease-out;
+  pointer-events: auto;
+}
 

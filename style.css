@@ -593,9 +593,9 @@ form .btn2{
 
   nav .fa-bars {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 28px;
+    bottom: 30px;
+    right: 30px;
+    font-size: 33px;
     z-index: 1000;
     cursor: pointer;
     color: #19334a;

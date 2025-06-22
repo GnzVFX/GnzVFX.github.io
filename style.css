@@ -762,5 +762,19 @@ form .btn2{
 nav .fa-bars {
   z-index: 1000;
 }
+    @keyframes slideUpLogo {
+  from {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -100px);
+    opacity: 0;
+  }
+}
+
+.logo.scroll-up {
+  animation: slideUpLogo 0.5s forwards ease-out;
+}
 
 

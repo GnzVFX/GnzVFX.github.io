@@ -762,7 +762,7 @@ form .btn2{
 nav .fa-bars {
   z-index: 1000;
 }
-    @keyframes slideUpLogo {
+@keyframes slideUpLogo {
   from {
     transform: translate(-50%, 0);
     opacity: 1;
@@ -773,8 +773,22 @@ nav .fa-bars {
   }
 }
 
-.logo.scroll-up {
-  animation: slideUpLogo 0.5s forwards ease-out;
+@keyframes slideDownLogo {
+  from {
+    transform: translate(-50%, -100px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
 }
 
+.logo.scroll-up {
+  animation: slideUpLogo 0.4s forwards ease-in;
+}
+
+.logo.scroll-down {
+  animation: slideDownLogo 0.4s forwards ease-out;
+}
 

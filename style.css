@@ -50,7 +50,7 @@ body{
     height: 100vh;
     overflow: hidden;
 }
-    #containter {
+    #container {
     position: fixed;
     width: 100%;
     top: 0;
@@ -93,7 +93,7 @@ nav {
     color: white;
     text-align: center;
 }
-.containter{
+.container{
     padding:8px 5%;   
 }
 

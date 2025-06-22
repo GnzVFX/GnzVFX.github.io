@@ -106,8 +106,6 @@ nav{
 
 .logo{
     width: 100px;
-    margin-top: 1%;
-    margin-left: 10px
 }
 
 nav ul li{
@@ -588,7 +586,7 @@ nav .fa-solid{
 
   .logo {
     position: absolute;
-    top: 20px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 130px;

@@ -779,7 +779,7 @@ nav .fa-bars {
   gap: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-left: none;
+  margin-left: auto;
 }
 
 .services-list div {

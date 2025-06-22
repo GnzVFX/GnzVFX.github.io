@@ -499,7 +499,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
          </script>
-    <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   const logo = document.querySelector(".logo");
   let lastScrollTop = 0;
@@ -509,13 +509,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (scrollTop > lastScrollTop && scrollTop > 50) {
       // Scroll hacia abajo
-      logo.classList.add("scroll-up");
+      if (!logo.classList.contains("scroll-up")) {
+        logo.classList.remove("scroll-down");
+        logo.classList.add("scroll-up");
+      }
     } else {
       // Scroll hacia arriba
-      logo.classList.remove("scroll-up");
+      if (!logo.classList.contains("scroll-down")) {
+        logo.classList.remove("scroll-up");
+        logo.classList.add("scroll-down");
+      }
     }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // evita valores negativos
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
 });
 </script>

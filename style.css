@@ -587,16 +587,25 @@ nav .fa-solid{
         font-size: 30px;
         margin-bottom: 5px;
     }
-    .logo{
-        width: 25%;
-        margin-top: 2%;
-        margin: 0 auto; /* Centrado automático */
-        display: block;
-    }
-    nav .fa-solid{
-        display: block;
-        font-size: 25px;
-    }
+  nav {
+    display: flex;
+    justify-content: center; /* Centra los elementos en horizontal */
+    align-items: center;
+    position: relative;
+  }
+
+  .logo {
+    margin: 0 auto; /* Centrado automático */
+    display: block;
+    width: 120px; /* o el tamaño que prefieras */
+  }
+
+  nav .fa-solid {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
     nav ul{
         background: rgb(29, 88, 139);
         position: fixed;

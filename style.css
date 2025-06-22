@@ -707,7 +707,7 @@ form .btn2{
     margin-left: 28%;
   }
   #services {
-    background: url('image/background-mobile.jpg'); /* o .png */
+    background: url('image/phone-background.png'); /* o .png */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

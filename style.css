@@ -579,27 +579,28 @@ nav .fa-solid{
 }
 @media (max-width: 768px) {
   nav {
-    display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
-    position: relative;
-    padding: 10px;
+    padding: 0;
   }
 
   .logo {
-    margin: 0 auto;
-    max-width: 150px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
     height: auto;
+    z-index: 10;
   }
 
   nav .fa-bars {
-    display: block;
-    position: absolute;
-    right: 22px;
-    top: 40%;
-    transform: translateY(-50%);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     font-size: 28px;
-    color: #19334a;
+    z-index: 1000;
     cursor: pointer;
   }
 
@@ -715,4 +716,12 @@ nav .fa-solid{
     text-align: center;
     margin-left: 9%;
   }
+    
+  #music-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+  }
 }
+

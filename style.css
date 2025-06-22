@@ -769,6 +769,8 @@ nav .fa-bars {
   z-index: 1000;
 }
 .services-list {
+  width: 50%;
+  margin-left: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;

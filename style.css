@@ -572,9 +572,6 @@ form .btn2{
     margin-top: 60px;
 }
 /* -------------css for small screen ------------- */
-nav .fa-solid{
-    display: none;
-}
 @media (max-width: 768px) {
   nav {
     position: relative;

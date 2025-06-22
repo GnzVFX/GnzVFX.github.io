@@ -579,12 +579,17 @@ nav .fa-solid{
 }
 @media only screen and (max-width: 600px) {
   nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
   }
 
   .logo {
-    display: block;
-    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
     width: 120px;
   }
 
@@ -597,6 +602,7 @@ nav .fa-solid{
     font-size: 25px;
     z-index: 3;
   }
+
 
   nav ul {
     position: fixed;

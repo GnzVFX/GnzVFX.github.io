@@ -702,10 +702,6 @@ form .btn2{
     text-align: center;
     margin-left: 5%;
   }
-
-  .services {
-    margin-left: 28%;
-  }
   #services {
     background: url('image/phone-background.png'); /* o .png */
     background-size: cover;

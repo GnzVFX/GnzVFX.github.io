@@ -706,6 +706,13 @@ form .btn2{
   .services {
     margin-left: 28%;
   }
+  #services {
+    background: url('image/background-mobile.jpg'); /* o .png */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
 
   .mywork-title {
     margin-left: 29%;

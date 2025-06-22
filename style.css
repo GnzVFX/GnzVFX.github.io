@@ -578,37 +578,37 @@ nav .fa-solid{
     display: none;
 }
 @media only screen and (max-width: 600px) {
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 60px; /* Asegura espacio para el logo */
-  }
-
-  .logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120px;
-    height: auto;
-    margin: 0;
-    z-index: 2;
-  }
-
-  nav .fa-bars {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 25px;
-    z-index: 3;
-    color: white;
-  }
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px;
 }
 
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Posiciona el menú hamburguesa a la derecha */
+nav .fa-bars {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Alinea también el ícono de cerrar dentro de ul si hace falta */
+#sidemenu .fa-xmark {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
 
   nav ul {
     position: fixed;

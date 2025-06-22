@@ -589,16 +589,23 @@ nav .fa-solid{
     }
   nav {
     display: flex;
-    justify-content: center; /* Centra los elementos en horizontal */
+    justify-content: center;
     align-items: center;
     position: relative;
   }
 
-  .logo {
-    margin: 0 auto; /* Centrado automático */
+  nav .logo {
+    margin: 0 auto;
     display: block;
-    width: 120px; /* o el tamaño que prefieras */
   }
+
+  nav .fa-bars {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
 
   nav .fa-solid {
     position: absolute;

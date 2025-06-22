@@ -791,7 +791,8 @@ nav .fa-bars {
 .logo.scroll-down {
   animation: slideDownLogo 0.4s forwards ease-out;
 }
-    @keyframes slideInLeft {
+/* Entrada */
+@keyframes slideInLeft {
   from {
     transform: translateX(-50px);
     opacity: 0;
@@ -813,19 +814,40 @@ nav .fa-bars {
   }
 }
 
-#music-toggle, .fa-bars {
-  opacity: 0;
-  pointer-events: none;
+/* Salida */
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
 }
 
-/* Aparecen con animación cuando se hace scroll */
-#music-toggle.visible {
-  animation: slideInLeft 0.5s forwards ease-out;
-  pointer-events: auto;
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(50px);
+    opacity: 0;
+  }
 }
 
-.fa-bars.visible {
-  animation: slideInRight 0.5s forwards ease-out;
-  pointer-events: auto;
+/* Clases aplicables */
+#music-toggle.appear {
+  animation: slideInLeft 0.5s forwards;
+}
+#music-toggle.disappear {
+  animation: slideOutLeft 0.5s forwards;
 }
 
+.fa-bars.appear {
+  animation: slideInRight 0.5s forwards;
+}
+.fa-bars.disappear {
+  animation: slideOutRight 0.5s forwards;
+}

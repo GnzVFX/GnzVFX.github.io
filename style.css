@@ -50,15 +50,17 @@ body{
     height: 100vh;
     overflow: hidden;
 }
-    #container {
+#container {
     position: fixed;
     width: 100%;
+    max-width: 1200px; /* o 1000px, ajustalo a gusto */
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.7); /* Negro con transparencia */
     transition: top 0.3s ease-in-out, background 0.3s ease-in-out;
     z-index: 1000;
     padding: 15px 0; /* Espaciado opcional */
+    box-sizing: border-box;
 }
 nav {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); 

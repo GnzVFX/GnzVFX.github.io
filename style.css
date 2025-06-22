@@ -768,6 +768,37 @@ form .btn2{
 nav .fa-bars {
   z-index: 1000;
 }
+.services-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.services-list div {
+  background-color: #19334a;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  box-sizing: border-box;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.services-list h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.services-list p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
 @keyframes slideUpLogo {
   from {
     transform: translate(-50%, 0);

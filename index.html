@@ -297,143 +297,158 @@
         <p>Copyright © GNZ.</p>
     </div>
 </div>
-    <script>
-    let lastScrollTop = 0;
-    let container = document.getElementById("container");
-
-    window.addEventListener("scroll", function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-            // Oculta la barra al hacer scroll hacia abajo
-            container.style.top = "-80px";  
-        } else {
-            // Muestra la barra al hacer scroll hacia arriba
-            container.style.top = "0";
-        }
-        lastScrollTop = scrollTop;
-    });
-
-    function openmenu() {
-        document.getElementById("sidemenu").style.right = "0";
-    }
-
-    function closemenu() {
-        document.getElementById("sidemenu").style.right = "-200px";
-    }
-</script>
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const video = document.getElementById("background-video");
-    const source = document.getElementById("video-source");
-
-    if (window.innerWidth <= 768) {
-      source.src = "image/PagVideo_Vertical.mp4"; // Versión vertical
-    } else {
-      source.src = "image/videopag4.mp4"; // Versión horizontal
-    }
-
-    video.load(); // Actualiza el video después de asignar el src
-  });
-</script>
 <script>
-
-    var tablinks = document.getElementsByClassName("tab-links")
-    var tabcontents = document.getElementsByClassName("tab-contents")
-
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link")
-        document.getElementById(tabname).classList.add("active-tab")
-    }
-
-</script>
-<script>
-
-   var sidemenu = document.getElementById("sidemenu")
-
-   function openmenu(){
-    sidemenu.style.right = "0";
-   }
-   function closemenu(){
-    sidemenu.style.right = "-200px";
-   }
-
-</script>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzRfff2xwteoKnYneWpkN1hMUd1kyr27WZV9UWb9F1jpBB028tzgiQbZ338rpuq3hE1/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(funtion(),{
-                msg:innerHTML = ""
-            },5000)
-            form;reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-</script>
-    <script>
+// Animación del logo, íconos de música y menú hamburguesa al hacer scroll
 document.addEventListener("DOMContentLoaded", function () {
-    const serviceItems = document.querySelectorAll(".services-list div");
+  const logo = document.querySelector(".logo");
+  const musicToggle = document.getElementById("music-toggle");
+  const menuIcon = document.querySelector(".fa-bars");
 
-    function checkVisibility() {
-        serviceItems.forEach((item) => {
-            const rect = item.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.9 && rect.bottom > 0) {
-                item.classList.add("visible");
-            } else {
-                item.classList.remove("visible");
-            }
-        });
-    }
+  let lastScrollTop = 0;
+  let isAtTop = true;
 
-    window.addEventListener("scroll", checkVisibility);
-    checkVisibility(); // Ejecuta una vez al cargar
-});
-        </script>
-<script>
-const musicToggle = document.getElementById("music-toggle");
-const musicIcon = document.getElementById("music-icon");
-const audio = document.getElementById("background-music");
+  window.addEventListener("scroll", function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-let isPlaying = true; // Comenzar con la música activada
-
-// Iniciar la música al cargar la página
-window.addEventListener("load", () => {
-    audio.play().catch(error => console.log("Autoplay bloqueado:", error));
-    musicIcon.src = "https://img.icons8.com/?size=100&id=102027&format=png&color=000000"; // Ícono de música encendida
-});
-
-// Alternar música al hacer clic
-musicToggle.addEventListener("click", () => {
-    if (isPlaying) {
-        audio.pause();
-        musicIcon.src = "https://img.icons8.com/?size=100&id=102034&format=png&color=000000"; // Ícono de música apagada
+    // Animación del logo
+    if (scrollTop > lastScrollTop && scrollTop > 50) {
+      if (!logo.classList.contains("scroll-up")) {
+        logo.classList.remove("scroll-down");
+        logo.classList.add("scroll-up");
+      }
     } else {
-        audio.play();
-        musicIcon.src = "https://img.icons8.com/?size=100&id=102027&format=png&color=000000"; // Ícono de música encendida
+      if (!logo.classList.contains("scroll-down")) {
+        logo.classList.remove("scroll-up");
+        logo.classList.add("scroll-down");
+      }
     }
-    isPlaying = !isPlaying;
-});
-    window.addEventListener("load", () => {
-    audio.volume = 0.1; // Volumen al 20% (0.0 = silencio, 1.0 = máximo)
-    audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+    // Mostrar u ocultar botones
+    if (scrollTop > 50 && isAtTop) {
+      musicToggle.classList.remove("disappear");
+      musicToggle.classList.add("appear");
+      musicToggle.style.pointerEvents = "auto";
+
+      menuIcon.classList.remove("disappear");
+      menuIcon.classList.add("appear");
+      menuIcon.style.pointerEvents = "auto";
+
+      isAtTop = false;
+    } else if (scrollTop <= 10 && !isAtTop) {
+      musicToggle.classList.remove("appear");
+      musicToggle.classList.add("disappear");
+      musicToggle.style.pointerEvents = "none";
+
+      menuIcon.classList.remove("appear");
+      menuIcon.classList.add("disappear");
+      menuIcon.style.pointerEvents = "none";
+
+      isAtTop = true;
+    }
+  });
 });
 </script>
+
 <script>
+// Ocultar barra al hacer scroll hacia abajo
+let lastScrollTop = 0;
+let container = document.getElementById("container");
+
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  container.style.top = scrollTop > lastScrollTop ? "-80px" : "0";
+  lastScrollTop = scrollTop;
+});
+</script>
+
+<script>
+// Menú lateral
+function openmenu() {
+  document.getElementById("sidemenu").style.right = "0";
+}
+function closemenu() {
+  document.getElementById("sidemenu").style.right = "-200px";
+}
+</script>
+
+<script>
+// Cambio de video según tamaño de pantalla
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.getElementById("background-video");
+  const source = document.getElementById("video-source");
+
+  if (window.innerWidth <= 768) {
+    source.src = "image/PagVideo_Vertical.mp4";
+  } else {
+    source.src = "image/videopag4.mp4";
+  }
+  video.load();
+});
+</script>
+
+<script>
+// Tabs
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname) {
+  for (tablink of tablinks) {
+    tablink.classList.remove("active-link");
+  }
+  for (tabcontent of tabcontents) {
+    tabcontent.classList.remove("active-tab");
+  }
+  event.currentTarget.classList.add("active-link");
+  document.getElementById(tabname).classList.add("active-tab");
+}
+</script>
+
+<script>
+// Envío a Google Sheet
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzRfff2xwteoKnYneWpkN1hMUd1kyr27WZV9UWb9F1jpBB028tzgiQbZ338rpuq3hE1/exec';
+const form = document.forms['submit-to-google-sheet'];
+const msg = document.getElementById("msg");
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+      msg.innerHTML = "Message sent successfully";
+      setTimeout(() => {
+        msg.innerHTML = "";
+      }, 5000);
+      form.reset();
+    })
+    .catch(error => console.error('Error!', error.message));
+});
+</script>
+
+<script>
+// Animación de entrada de elementos de services
+document.addEventListener("DOMContentLoaded", function () {
+  const serviceItems = document.querySelectorAll(".services-list div");
+
+  function checkVisibility() {
+    serviceItems.forEach((item) => {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.9 && rect.bottom > 0) {
+        item.classList.add("visible");
+      } else {
+        item.classList.remove("visible");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", checkVisibility);
+  checkVisibility();
+});
+</script>
+
+<script>
+// Toggle Sketchfab embed
 function toggleSketchfab(button) {
-event.preventDefault(); // ← Esta línea evita que se recargue/suba
+  event.preventDefault();
   const work = button.closest('.work');
   const img = work.querySelector('.preview-image');
   const sketchfab = work.querySelector('.sketchfab-embed');
@@ -474,132 +489,62 @@ event.preventDefault(); // ← Esta línea evita que se recargue/suba
   }
 }
 </script>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const modal = document.getElementById("vimeoModal");
-    const iframe = document.getElementById("vimeoPlayer");
-    const openModalBtns = document.querySelectorAll(".open-modal");
-    const closeModalBtn = document.querySelector(".close");
 
-    openModalBtns.forEach(button => {
-        button.addEventListener("click", function(event) {
-            event.preventDefault();
-            const videoUrl = this.getAttribute("data-video");
-            iframe.src = videoUrl;
-            modal.style.display = "flex";
-        });
-    });
-
-    closeModalBtn.addEventListener("click", function() {
-        modal.style.display = "none";
-        iframe.src = ""; // Detener el video al cerrar
-    });
-
-    window.addEventListener("click", function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-            iframe.src = ""; // Detener el video
-        }
-    });
-});
-
-</script>
-     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.querySelector(".modal");
-    const closeButton = document.querySelector(".close");
-    const openButton = document.querySelector(".open-modal"); // Ícono que abre el modal
-
-    openButton.addEventListener("click", function () {
-        modal.style.display = "flex"; // Muestra el modal
-        closeButton.style.display = "block"; // Muestra el botón de cerrar
-    });
-
-    closeButton.addEventListener("click", function () {
-        modal.style.display = "none"; // Oculta el modal
-        closeButton.style.display = "none"; // Oculta el botón de cerrar
-    });
-});
-         </script>
 <script>
+// Vimeo modal
 document.addEventListener("DOMContentLoaded", function () {
-  const logo = document.querySelector(".logo");
-  let lastScrollTop = 0;
+  const modal = document.getElementById("vimeoModal");
+  const iframe = document.getElementById("vimeoPlayer");
+  const openModalBtns = document.querySelectorAll(".open-modal");
+  const closeModalBtn = document.querySelector(".close");
 
-  window.addEventListener("scroll", function () {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  openModalBtns.forEach(button => {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      const videoUrl = this.getAttribute("data-video");
+      iframe.src = videoUrl;
+      modal.style.display = "flex";
+    });
+  });
 
-    if (scrollTop > lastScrollTop && scrollTop > 50) {
-      // Scroll hacia abajo
-      if (!logo.classList.contains("scroll-up")) {
-        logo.classList.remove("scroll-down");
-        logo.classList.add("scroll-up");
-      }
-    } else {
-      // Scroll hacia arriba
-      if (!logo.classList.contains("scroll-down")) {
-        logo.classList.remove("scroll-up");
-        logo.classList.add("scroll-down");
-      }
+  closeModalBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+    iframe.src = "";
+  });
+
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      iframe.src = "";
     }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
 });
 </script>
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const logo = document.querySelector(".logo");
-  const musicToggle = document.getElementById("music-toggle");
-  const menuIcon = document.querySelector(".fa-bars");
+// Música de fondo
+const musicToggle = document.getElementById("music-toggle");
+const musicIcon = document.getElementById("music-icon");
+const audio = document.getElementById("background-music");
+let isPlaying = true;
 
-  let isAtTop = true;
-  let lastScrollTop = 0;
+window.addEventListener("load", () => {
+  audio.volume = 0.1;
+  audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+  musicIcon.src = "https://img.icons8.com/?size=100&id=102027&format=png&color=000000";
+});
 
-  window.addEventListener("scroll", function () {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Logo animation
-    if (scrollTop > lastScrollTop && scrollTop > 50) {
-      // Scroll down
-      if (!logo.classList.contains("scroll-up")) {
-        logo.classList.remove("scroll-down");
-        logo.classList.add("scroll-up");
-      }
-    } else {
-      // Scroll up
-      if (!logo.classList.contains("scroll-down")) {
-        logo.classList.remove("scroll-up");
-        logo.classList.add("scroll-down");
-      }
-    }
-
-    // Icon appearance/disappearance
-    if (scrollTop > 50 && isAtTop) {
-      musicToggle.classList.remove("disappear");
-      musicToggle.classList.add("appear");
-      musicToggle.style.pointerEvents = "auto";
-
-      menuIcon.classList.remove("disappear");
-      menuIcon.classList.add("appear");
-      menuIcon.style.pointerEvents = "auto";
-
-      isAtTop = false;
-    } else if (scrollTop <= 10 && !isAtTop) {
-      musicToggle.classList.remove("appear");
-      musicToggle.classList.add("disappear");
-      musicToggle.style.pointerEvents = "none";
-
-      menuIcon.classList.remove("appear");
-      menuIcon.classList.add("disappear");
-      menuIcon.style.pointerEvents = "none";
-
-      isAtTop = true;
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
+musicToggle.addEventListener("click", () => {
+  if (isPlaying) {
+    audio.pause();
+    musicIcon.src = "https://img.icons8.com/?size=100&id=102034&format=png&color=000000";
+  } else {
+    audio.play();
+    musicIcon.src = "https://img.icons8.com/?size=100&id=102027&format=png&color=000000";
+  }
+  isPlaying = !isPlaying;
 });
 </script>
+
 </body>
 </html>

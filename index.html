@@ -585,6 +585,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>   
-    <script> let lastScrollTop = 0; const logo = document.querySelector(".logo"); window.addEventListener("scroll", () => { let scrollTop = window.pageYOffset || document.documentElement.scrollTop; if (scrollTop > 100) { if (!logo.classList.contains("scroll-up")) { logo.classList.remove("scroll-down"); logo.classList.add("scroll-up"); } } else { if (!logo.classList.contains("scroll-down")) { logo.classList.remove("scroll-up"); logo.classList.add("scroll-down"); } } lastScrollTop = scrollTop; }); </script>
+    <script>
+    let lastScrollTop = 0;
+    const logo = document.querySelector(".logo");
+
+    window.addEventListener("scroll", () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > 100) {
+            if (!logo.classList.contains("scroll-up")) {
+                logo.classList.remove("scroll-down");
+                logo.classList.add("scroll-up");
+            }
+        } else {
+            if (!logo.classList.contains("scroll-down")) {
+                logo.classList.remove("scroll-up");
+                logo.classList.add("scroll-down");
+            }
+        }
+
+        lastScrollTop = scrollTop;
+    });
+</script>
 </body>
 </html>

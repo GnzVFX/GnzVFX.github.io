@@ -298,7 +298,6 @@
     </div>
 </div>
 <script>
-// Animación del logo, íconos de música y menú hamburguesa al hacer scroll
 document.addEventListener("DOMContentLoaded", function () {
   const logo = document.querySelector(".logo");
   const musicToggle = document.getElementById("music-toggle");
@@ -349,7 +348,32 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const logo = document.querySelector(".logo");
+    let lastScrollTop = 0;
 
+    window.addEventListener("scroll", function () {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop && scrollTop > 50) {
+        // Scroll hacia abajo → esconder
+        if (!logo.classList.contains("scroll-up")) {
+          logo.classList.remove("scroll-down");
+          logo.classList.add("scroll-up");
+        }
+      } else {
+        // Scroll hacia arriba → mostrar
+        if (!logo.classList.contains("scroll-down")) {
+          logo.classList.remove("scroll-up");
+          logo.classList.add("scroll-down");
+        }
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  });
+</script>
 <script>
 // Ocultar barra al hacer scroll hacia abajo
 let lastScrollTop = 0;

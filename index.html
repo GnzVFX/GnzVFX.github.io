@@ -548,18 +548,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const logo = document.querySelector(".logo");
   const musicToggle = document.getElementById("music-toggle");
   const menuIcon = document.querySelector(".fa-bars");
 
   let isAtTop = true;
+  let lastScrollTop = 0;
 
   window.addEventListener("scroll", function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+    // Logo animation
+    if (scrollTop > lastScrollTop && scrollTop > 50) {
+      // Scroll down
+      if (!logo.classList.contains("scroll-up")) {
+        logo.classList.remove("scroll-down");
+        logo.classList.add("scroll-up");
+      }
+    } else {
+      // Scroll up
+      if (!logo.classList.contains("scroll-down")) {
+        logo.classList.remove("scroll-up");
+        logo.classList.add("scroll-down");
+      }
+    }
+
+    // Icon appearance/disappearance
     if (scrollTop > 50 && isAtTop) {
-      // Aparecen con animación
       musicToggle.classList.remove("disappear");
       musicToggle.classList.add("appear");
       musicToggle.style.pointerEvents = "auto";
@@ -569,9 +585,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menuIcon.style.pointerEvents = "auto";
 
       isAtTop = false;
-
     } else if (scrollTop <= 10 && !isAtTop) {
-      // Desaparecen con animación
       musicToggle.classList.remove("appear");
       musicToggle.classList.add("disappear");
       musicToggle.style.pointerEvents = "none";
@@ -582,30 +596,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       isAtTop = true;
     }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
 });
-</script>   
-    <script>
-    let lastScrollTop = 0;
-    const logo = document.querySelector(".logo");
-
-    window.addEventListener("scroll", () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > 100) {
-            if (!logo.classList.contains("scroll-up")) {
-                logo.classList.remove("scroll-down");
-                logo.classList.add("scroll-up");
-            }
-        } else {
-            if (!logo.classList.contains("scroll-down")) {
-                logo.classList.remove("scroll-up");
-                logo.classList.add("scroll-down");
-            }
-        }
-
-        lastScrollTop = scrollTop;
-    });
 </script>
 </body>
 </html>

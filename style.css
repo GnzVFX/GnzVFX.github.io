@@ -319,6 +319,22 @@ nav ul li a:hover::after{
     display: block;
     margin-top: 6%;
 }
+.services-video-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.services-video-mobile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 /* -------------DemoReel------------- */
 .DemoReel{
     text-align: center;
@@ -803,6 +819,15 @@ nav .fa-bars {
 .services-list p {
   font-size: 14px;
   line-height: 1.4;
+}
+  #services {
+    position: relative;
+    background: none; /* elimina la imagen de fondo */
+  }
+
+  .services-video-mobile {
+    display: block;
+  }
 }
 
 @keyframes slideUpLogo {

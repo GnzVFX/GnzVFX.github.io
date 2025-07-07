@@ -685,7 +685,6 @@ form .btn2{
   .aboutme {
     align-items: center;
     text-align: center;
-    margin-left: 8%;
   }
 
   .abouttext {
@@ -694,7 +693,6 @@ form .btn2{
     display: block;
     text-align: center;
     margin-top: 7%;
-    margin-left: 5%;
   }
 
   .sub-title {
@@ -719,7 +717,6 @@ form .btn2{
 
   .tab-contents {
     text-align: center;
-    margin-left: 9%;
   }
     
   #music-toggle {
@@ -1006,3 +1003,65 @@ nav .fa-bars {
     white-space: nowrap;
   }
 }
+/* Oculta video por defecto */
+.services-video-mobile {
+  display: none;
+}
+
+/* Solo para mobile */
+@media (max-width: 768px) {
+  #services {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services-video-mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .services-video-mobile video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .services-list {
+    position: relative;
+    z-index: 1;
+  }
+}
+@media (max-width: 768px) {
+  #about .row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-col-1,
+  .about-col-2 {
+    width: 100%;
+    flex-basis: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-col-2 {
+    padding: 0 1rem;
+  }
+
+  .tab-titles {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .tab-contents ul {
+    padding-left: 0;
+    list-style: none;
+  }
+}
+

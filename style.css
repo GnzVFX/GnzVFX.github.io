@@ -319,22 +319,6 @@ nav ul li a:hover::after{
     display: block;
     margin-top: 6%;
 }
-.services-video-mobile {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.services-video-mobile video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 /* -------------DemoReel------------- */
 .DemoReel{
     text-align: center;
@@ -532,12 +516,11 @@ video {
 }
 .contact-left{
     flex-basis: 20%;
-    margin-left: 8%;
+
 }
 .contact-right{
     flex-basis: 50%;
-    margin-right: 8%;
-    margin-top: 5%;
+
 }
 .contact-left p{
     margin-top: 30px;
@@ -603,15 +586,14 @@ form .btn2{
     background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   }
 
-.logo {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 130px;
-  z-index: 10;
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-}
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: auto;
+    z-index: 10;
   }
 
   nav .fa-bars {
@@ -720,7 +702,7 @@ form .btn2{
     margin-left: 5%;
   }
   #services {
-    background: url('image/LabuPagLoop.mp4'); /* o .png */
+    background: url('image/phone-background.png'); /* o .png */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -777,6 +759,13 @@ form .btn2{
   bottom: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
 }
+
+/* Asegurate que el logo y botones tengan z-index mayor que 2 */
+.logo {
+  position: absolute;
+  z-index: 10;
+}
+
 #music-toggle,
 nav .fa-bars {
   z-index: 1000;
@@ -793,7 +782,7 @@ nav .fa-bars {
 }
 
 .services-list div {
-  background-color: #19334ae6;
+  background-color: #19334a;
   color: white;
   padding: 20px;
   border-radius: 10px;
@@ -813,15 +802,6 @@ nav .fa-bars {
 .services-list p {
   font-size: 14px;
   line-height: 1.4;
-}
-  #services {
-    position: relative;
-    background: none; /* elimina la imagen de fondo */
-  }
-
-  .services-video-mobile {
-    display: block;
-  }
 }
 
 @keyframes slideUpLogo {
@@ -913,3 +893,105 @@ nav .fa-bars {
 .fa-bars.disappear {
   animation: slideOutRight 0.5s forwards;
 }
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px; /* 👈 Añadimos esto */
+    margin: 0 auto;    /* 👈 Centrado total */
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+
+  .contact-right form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-right form input,
+  .contact-right form textarea,
+  .contact-right form button,
+  .contact-left .btn2 {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .contact-left p,
+  .contact-left .social-icons {
+    margin: 5px 0;
+  }
+
+  .contact-left .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+.contact-left h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.contact-left p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.contact-left i {
+  font-size: 18px;
+}
+
+.contact-left .social-icons {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-left .btn2 {
+  margin: 20px 0;
+}
+
+.contact-right form input,
+.contact-right form textarea,
+.contact-right form button {
+  font-size: 16px;
+  padding: 12px;
+}
+
+.contact-right form textarea {
+  resize: none;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-left {
+    order: 2; /* Va al final */
+    text-align: center;
+  }
+
+  .contact-right {
+    order: 1; /* Formulario en el medio */
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .sub-contact {
+    order: 0; /* Título al principio */
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+}
+

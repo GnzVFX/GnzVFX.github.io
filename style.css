@@ -989,9 +989,20 @@ nav .fa-bars {
   .sub-contact {
     order: 0; /* Título al principio */
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     text-align: center;
     width: 100%;
   }
 }
-
+@media (max-width: 768px) {
+  .copyright {
+    font-size: 0.7rem;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    white-space: nowrap;
+  }
+}

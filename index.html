@@ -103,6 +103,25 @@
         </div>
     </div>
 </div>
+<!-- -------------Programas------------- -->
+<div class="logo-carousel-wrapper">
+  <div class="fade-left"></div>
+  <div class="fade-right"></div>
+
+  <div class="logo-carousel" id="logoCarousel">
+    <img src="image/blender.png" alt="Blender">
+    <img src="image/maya.png" alt="Maya">
+    <img src="image/substance.png" alt="Substance">
+    <img src="image/zbrush.png" alt="Zbrush">
+    <img src="image/houdini.png" alt="Houdini">
+    <img src="image/fusion.png" alt="Fusion">
+    <img src="image/premiere.png" alt="Premiere">
+    <img src="image/after-effects.png" alt="After Effects">
+    <img src="image/photoshop.png" alt="Photoshop">
+    <img src="image/illustrator.png" alt="Illustrator">
+  </div>
+</div>
+
 <!-- -------------Portfolio------------- -->
 <div id="portfolio">
     <div class="container">
@@ -621,6 +640,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+<script>
+  const carousel = document.getElementById("logoCarousel");
+
+  // Duplicar contenido para loop infinito
+  carousel.innerHTML += carousel.innerHTML;
+
+  let position = 0;
+  const speed = 0.5; // velocidad del scroll
+
+  function animate() {
+    position -= speed;
+    if (Math.abs(position) >= carousel.scrollWidth / 2) {
+      position = 0;
+    }
+    carousel.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
+
 </body>
 </html>
 

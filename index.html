@@ -63,10 +63,11 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <video autoplay loop muted playsinline>
-                    <source src="image/LabuPagLoop.mp4" type="video/mp4">
-                </video>
-            </div>
+  <img src="image/phone-background.png" alt="Gonzalo Chamorro" class="about-photo">
+  <video autoplay loop muted playsinline class="about-video">
+    <source src="image/LabuPagLoop.mp4" type="video/mp4">
+  </video>
+</div>
             <div class="about-col-2">
                 <h1 class="aboutme">About me</h1>
                 <div class="abouttext"><p>I’m Gonzalo Chamorro, a digital artist specializing in animation, VFX, and video editing. With years of experience, I blend creativity and technical precision to turn ideas into stunning visual experiences. Each project is an opportunity to innovate and deliver top-quality results, ensuring excellence and client satisfaction.</p>
@@ -286,7 +287,10 @@
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
+                    <button type="submit" class="btn btn2" id="submit-btn">
+  <span class="btn-text">Submit</span>
+  <i class="fa-solid fa-spinner fa-spin" id="loading-spinner" style="display: none; margin-left: 10px;"></i>
+</button>
                 </form>
                 <span id="msg"></span>
             </div>
@@ -366,25 +370,38 @@
 </script>
 
 <script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbx5FTkgSLGC_MfVI5SpFObh1H3aSTruoSnN-ymCyO7TcCufXh5ncb5OvdBbIxVvuhQCRw/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyl29sxI610aI03hT2f6IIgn018MOA4ML5IKPip9eI-XVZHLJuF_ykh5KsIDC8OwKCn_Q/exec';
   const form = document.forms['submit-to-google-sheet'];
   const msg = document.getElementById("msg");
 
   form.addEventListener('submit', e => {
-    e.preventDefault();
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(response => {
-  msg.innerHTML = "Message sent successfully";
-  setTimeout(() => {
-    msg.innerHTML = "";
-  }, 5000);
-  form.reset();
-})
-      .catch(error => {
-        msg.innerHTML = "Hubo un error al enviar 😓";
-        console.error('Error!', error.message);
-      });
-  });
+  e.preventDefault();
+
+  const submitBtn = document.getElementById("submit-btn");
+  const spinner = document.getElementById("loading-spinner");
+  const btnText = submitBtn.querySelector(".btn-text");
+
+  // Mostrar el spinner y ocultar el texto
+  spinner.style.display = "inline-block";
+  btnText.style.display = "none";
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+      msg.innerHTML = "Message sent successfully ✅";
+      setTimeout(() => { msg.innerHTML = ""; }, 5000);
+      form.reset();
+    })
+    .catch(error => {
+      msg.innerHTML = "Hubo un error al enviar 😓";
+      console.error('Error!', error.message);
+    })
+    .finally(() => {
+      // Volver al botón original
+      spinner.style.display = "none";
+      btnText.style.display = "inline";
+    });
+});
+
 </script>
     <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -606,3 +623,4 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+

@@ -292,7 +292,7 @@ nav ul li a:hover::after{
   top: 0;
   width: 80px;
   height: 100%;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -1100,7 +1100,7 @@ nav .fa-bars {
 
   .services-list {
     position: relative;
-    z-index: 1;
+    z-index: 0;
   }
 }
 @media (max-width: 768px) {
@@ -1188,6 +1188,79 @@ nav .fa-bars {
   }
 }
 @media (max-width: 768px) {
+  .work {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.5s ease-out;
+  }
+
+  .work.animate {
+    opacity: 1;
+    transform: scale(1.05);
+    animation: pulseMobile 0.8s ease-out;
+  }
+   }
+@media (max-width: 768px) {
+  .work {
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.4s ease;
+  }
+
+  .work::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+  }
+
+  .work.focused::after {
+    opacity: 0;
+  }
+
+  .work:not(.focused)::after {
+    opacity: 1;
+  }
+
+  /* Titilar solo el .focused */
+  .work.focused {
+    animation: subtlePulse 2.2s ease-in-out infinite;
+    z-index: 0;
+  }
+
+  @keyframes subtlePulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.02);
+      opacity: 0.95;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes bounceArrow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  /* Al tocar (tap) expande full */
+  .work:active .layer,
+  .work:focus .layer {
+    height: 100%;
+    pointer-events: auto;
+  }
+}
+@media (max-width: 768px) {
 .about-col-1 {
 position: relative;
 }
@@ -1211,7 +1284,7 @@ left: 0;
 width: 100%;
 height: 80px;
 pointer-events: none;
-z-index: 2;
+z-index: 0;
 }
 
 .top-gradient {

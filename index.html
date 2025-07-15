@@ -694,18 +694,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      works.forEach(work => {
-        work.classList.remove("focused");
-      });
-
-      if (closest) {
-        closest.classList.add("focused");
-      }
+      works.forEach(work => work.classList.remove("focused"));
+      if (closest) closest.classList.add("focused");
     }
 
     window.addEventListener("scroll", updateFocus);
     window.addEventListener("resize", updateFocus);
-    updateFocus(); // inicial
+    updateFocus();
   }
 });
 </script>

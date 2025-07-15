@@ -1312,28 +1312,27 @@ display: none; /* ocultamos el video en mobile si no lo querés activo */
     background: rgba(0, 0, 0, 0.5);
     padding: 4px 10px;
     border-radius: 20px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
     z-index: 3;
     animation: fadeHint 2.5s ease-in-out infinite;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
     display: none;
   }
 
-  .focused .tap-hint {
+  .work.focused:not(.layer-open) .tap-hint {
     display: block;
     opacity: 1;
-  }
-
-  .hint-hidden .tap-hint {
-    display: none !important;
-  }
-
-  .layer-open .tap-hint {
-    display: none !important;
+    transform: translateX(-50%) translateY(0);
   }
 
   @keyframes fadeHint {
     0%, 100% { opacity: 0.4; }
     50% { opacity: 1; }
+  }
+
+  /* Por si acaso: oculta si está expandido */
+  .work.layer-open .tap-hint {
+    display: none !important;
+    opacity: 0 !important;
   }
 }

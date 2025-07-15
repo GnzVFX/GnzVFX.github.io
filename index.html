@@ -697,8 +697,8 @@ document.addEventListener("DOMContentLoaded", function () {
       works.forEach(work => {
         work.classList.remove("focused");
 
-        // Si tenía hint oculto y ya no está enfocado, reseteamos
-        if (work.classList.contains("hint-hidden") && work !== closest) {
+        // Si ya no está expandido, quitamos la clase que oculta el hint
+        if (!work.classList.contains("layer-open")) {
           work.classList.remove("hint-hidden");
         }
       });
@@ -712,10 +712,18 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", updateFocus);
     updateFocus();
 
-    // Al hacer click en el proyecto centrado, ocultamos su hint
+    // Manejo de tap/click en cada proyecto
     works.forEach(work => {
+      const layer = work.querySelector(".layer");
+
       work.addEventListener("click", () => {
-        if (work.classList.contains("focused")) {
+        // Si ya está abierto, lo cerramos
+        if (work.classList.contains("layer-open")) {
+          work.classList.remove("layer-open");
+          work.classList.remove("hint-hidden");
+        } else {
+          // Lo abrimos y ocultamos el hint
+          work.classList.add("layer-open");
           work.classList.add("hint-hidden");
         }
       });
@@ -723,6 +731,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+
 </body>
 </html>
 

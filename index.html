@@ -122,14 +122,31 @@
     <div class="container">
         <div class="work-list">
             <div class="work">
-                <div class="tap-hint">Tap to view</div>
-                <img src="image/bgh.png">
-                <div class="layer">
-                    <h3>BGH</h3>
-                    <p>I developed 3D models of Gamma's new machines for their exhibition, showcasing their innovations with a high-impact visual presentation.</p>
-                    <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1061635247"></a>
-                </div>
-            </div>
+                 <div class="tap-hint">Tap to view</div>
+  <div class="media-container">
+    <img src="image/bgh.png" alt="BGH" class="preview-image">
+    <iframe class="sketchfab-embed"
+      src="https://sketchfab.com/models/4749842954bf4e0db9c8498272949140/embed"
+      frameborder="0" allowfullscreen
+      allow="autoplay; fullscreen; xr-spatial-tracking"
+      allowxr="true"
+      style="display: none;">
+    </iframe>
+    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this)">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <div class="layer">
+    <h3>BGH</h3>
+    <p>3D texturing of a classic Volkswagen Beetle with a focus on realism and aging. Worn materials, rust, and dirt were applied.</p>
+    <div class="icon-buttons">
+      <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
+      <a href="#" onclick="toggleSketchfab(this)">
+        <i class="fa-solid fa-eye"></i>
+      </a>
+    </div>
+  </div>
+</div>
                         <div class="work">
                 <img src="image/gamma.jpg">
                 <div class="layer">

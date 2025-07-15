@@ -129,10 +129,6 @@
                     <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1061635247"></a>
                 </div>
             </div>
-<div id="vimeoModal" class="modal">
-    <span class="close">&times;</span>
-    <iframe id="vimeoPlayer" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-</div>
                         <div class="work">
                 <img src="image/gamma.jpg">
                 <div class="layer">
@@ -141,10 +137,7 @@
                     <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1061635247"></a>
                 </div>
             </div>
-<div id="vimeoModal" class="modal">
-    <span class="close">&times;</span>
-    <iframe id="vimeoPlayer" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-</div>
+
             <div class="work">
                 <img src="image/Granada.jpg">
                 <div class="layer">
@@ -248,7 +241,6 @@
     </div>
   </div>
 </div>
-
 <div class="work">
   <img src="image/SimioRender.jpg">
   <div class="layer">
@@ -294,6 +286,7 @@
         </div>
     </div>
 </div>
+
 <!-- -------------Contact------------- -->
 <div id="contact">
     <div class="container">
@@ -520,53 +513,6 @@ event.preventDefault(); // ← Esta línea evita que se recargue/suba
   }
 }
 </script>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const modal = document.getElementById("vimeoModal");
-    const iframe = document.getElementById("vimeoPlayer");
-    const openModalBtns = document.querySelectorAll(".open-modal");
-    const closeModalBtn = document.querySelector(".close");
-
-    openModalBtns.forEach(button => {
-        button.addEventListener("click", function(event) {
-            event.preventDefault();
-            const videoUrl = this.getAttribute("data-video");
-            iframe.src = videoUrl;
-            modal.style.display = "flex";
-        });
-    });
-
-    closeModalBtn.addEventListener("click", function() {
-        modal.style.display = "none";
-        iframe.src = ""; // Detener el video al cerrar
-    });
-
-    window.addEventListener("click", function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-            iframe.src = ""; // Detener el video
-        }
-    });
-});
-
-</script>
-     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.querySelector(".modal");
-    const closeButton = document.querySelector(".close");
-    const openButton = document.querySelector(".open-modal"); // Ícono que abre el modal
-
-    openButton.addEventListener("click", function () {
-        modal.style.display = "flex"; // Muestra el modal
-        closeButton.style.display = "block"; // Muestra el botón de cerrar
-    });
-
-    closeButton.addEventListener("click", function () {
-        modal.style.display = "none"; // Oculta el modal
-        closeButton.style.display = "none"; // Oculta el botón de cerrar
-    });
-});
-         </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const logo = document.querySelector(".logo");
@@ -668,8 +614,51 @@ document.addEventListener("DOMContentLoaded", function () {
   animate();
 </script>
 
+<div id="vimeoModal" class="modal">
+  <span class="close">&times;</span>
+  <iframe id="vimeoPlayer" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("vimeoModal");
+  const iframe = document.getElementById("vimeoPlayer");
+  const closeBtn = modal.querySelector(".close");
+  const triggers = document.querySelectorAll(".open-modal");
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener("click", function (e) {
+      e.preventDefault();
+      const videoUrl = this.getAttribute("data-video");
+      iframe.src = videoUrl + "?autoplay=1";
+      modal.style.display = "flex";
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = "none";
+    // Le damos un pequeño delay antes de borrar el src
+    setTimeout(() => {
+      iframe.src = "";
+    }, 300); // para asegurar que se cierre correctamente
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+});
+</script>
+
+
+
+
 </body>
 </html>
+
 
 
 

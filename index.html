@@ -698,12 +698,24 @@ document.addEventListener("DOMContentLoaded", function () {
       if (closest) closest.classList.add("focused");
     }
 
+    // Ejecutar al scrollear o redimensionar
     window.addEventListener("scroll", updateFocus);
     window.addEventListener("resize", updateFocus);
     updateFocus();
+
+    // Ocultar el hint al primer tap
+    works.forEach(work => {
+      work.addEventListener("click", () => {
+        const hint = work.querySelector(".tap-hint");
+        if (hint) {
+          hint.style.display = "none";
+        }
+      }, { once: true }); // Solo la primera vez
+    });
   }
 });
 </script>
+
 
 
 </body>

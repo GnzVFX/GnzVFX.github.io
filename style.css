@@ -1315,24 +1315,25 @@ display: none; /* ocultamos el video en mobile si no lo querés activo */
     z-index: 3;
     animation: fadeHint 2.5s ease-in-out infinite;
     opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    transition: opacity 0.4s ease;
     display: none;
+    pointer-events: none;
   }
 
+  /* Mostrar solo si está centrado Y cerrado */
   .work.focused:not(.layer-open) .tap-hint {
     display: block;
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Asegurarnos de ocultarlo en cualquier otro caso */
+  .work.layer-open .tap-hint {
+    display: none !important;
+    opacity: 0 !important;
   }
 
   @keyframes fadeHint {
     0%, 100% { opacity: 0.4; }
     50% { opacity: 1; }
-  }
-
-  /* Por si acaso: oculta si está expandido */
-  .work.layer-open .tap-hint {
-    display: none !important;
-    opacity: 0 !important;
   }
 }

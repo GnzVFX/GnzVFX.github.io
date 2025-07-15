@@ -694,30 +694,35 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      works.forEach(work => work.classList.remove("focused"));
-      if (closest) closest.classList.add("focused");
+      works.forEach(work => {
+        work.classList.remove("focused");
+
+        // Si tenía hint oculto y ya no está enfocado, reseteamos
+        if (work.classList.contains("hint-hidden") && work !== closest) {
+          work.classList.remove("hint-hidden");
+        }
+      });
+
+      if (closest) {
+        closest.classList.add("focused");
+      }
     }
 
-    // Ejecutar al scrollear o redimensionar
     window.addEventListener("scroll", updateFocus);
     window.addEventListener("resize", updateFocus);
     updateFocus();
 
-    // Ocultar el hint al primer tap
+    // Al hacer click en el proyecto centrado, ocultamos su hint
     works.forEach(work => {
       work.addEventListener("click", () => {
-        const hint = work.querySelector(".tap-hint");
-        if (hint) {
-          hint.style.display = "none";
+        if (work.classList.contains("focused")) {
+          work.classList.add("hint-hidden");
         }
-      }, { once: true }); // Solo la primera vez
+      });
     });
   }
 });
 </script>
-
-
-
 </body>
 </html>
 

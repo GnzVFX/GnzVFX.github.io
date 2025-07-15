@@ -652,13 +652,64 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth <= 768) {
+    const works = document.querySelectorAll(".work");
 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        } else {
+          entry.target.classList.remove("animate");
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
 
+    works.forEach(work => observer.observe(work));
+  }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth <= 768) {
+    const works = document.querySelectorAll(".work");
+
+    function updateFocus() {
+      let closest = null;
+      let minDistance = Infinity;
+
+      works.forEach(work => {
+        const rect = work.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const distance = Math.abs(window.innerHeight / 2 - center);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          closest = work;
+        }
+      });
+
+      works.forEach(work => {
+        work.classList.remove("focused");
+      });
+
+      if (closest) {
+        closest.classList.add("focused");
+      }
+    }
+
+    window.addEventListener("scroll", updateFocus);
+    window.addEventListener("resize", updateFocus);
+    updateFocus(); // inicial
+  }
+});
+</script>
 
 
 </body>
 </html>
-
-
-
 

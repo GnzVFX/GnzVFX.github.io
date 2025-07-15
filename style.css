@@ -1302,7 +1302,7 @@ display: none; /* ocultamos el video en mobile si no lo querés activo */
 }
 }
 @media (max-width: 768px) {
-  .work .tap-hint {
+  .tap-hint {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -1318,8 +1318,12 @@ display: none; /* ocultamos el video en mobile si no lo querés activo */
     animation: fadeHint 2.5s ease-in-out infinite;
   }
 
-  .work.focused .tap-hint {
+  .focused .tap-hint {
     opacity: 1;
+  }
+
+  .hint-hidden .tap-hint {
+    display: none !important;
   }
 
   @keyframes fadeHint {
@@ -1327,4 +1331,3 @@ display: none; /* ocultamos el video en mobile si no lo querés activo */
     50% { opacity: 1; }
   }
 }
-

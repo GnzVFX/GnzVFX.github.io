@@ -102,7 +102,6 @@
 <div class="logo-carousel-wrapper">
   <div class="fade-left"></div>
   <div class="fade-right"></div>
-
   <div class="logo-carousel" id="logoCarousel">
     <img src="image/blender.png" alt="Blender">
     <img src="image/maya.png" alt="Maya">
@@ -122,7 +121,6 @@
     <div class="container">
         <div class="work-list">
             <div class="work">
-                 <div class="tap-hint">Tap to view</div>
   <div class="media-container">
     <img src="image/bgh.png" alt="BGH" class="preview-image">
     <iframe class="sketchfab-embed"
@@ -137,27 +135,56 @@
     </button>
   </div>
   <div class="layer">
-    <h3>BGH</h3>
-    <p>3D texturing of a classic Volkswagen Beetle with a focus on realism and aging. Worn materials, rust, and dirt were applied.</p>
+              <h3>BGH</h3>
+          <p>
+            Proyecto de texturizado 3D centrado en el realismo y envejecimiento de un Volkswagen Beetle clásico.
+          </p>
     <div class="icon-buttons">
       <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
       <a href="#" onclick="toggleSketchfab(this)">
         <i class="fa-solid fa-eye"></i>
       </a>
     </div>
-  </div>
+     <div class="used-programs">
+            <img src="image/maya.png" alt="Substance Painter" title="Substance Painter">
+            <img src="image/after-effects.png" alt="Blender" title="Blender">
+            <img src="image/premiere.png" alt="Photoshop" title="Photoshop">
+            <img src="image/python.png" alt="Photoshop" title="Photoshop">
+          </div>
+    </div>
 </div>
-                        <div class="work">
-                <img src="image/gamma.jpg">
-                <div class="layer">
-                    <h3>GAMMA 3D Models</h3>
-                    <p>I developed 3D models of Gamma's new machines for their exhibition, showcasing their innovations with a high-impact visual presentation.</p>
-                    <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1061635247"></a>
-                </div>
-            </div>
-
             <div class="work">
-             <div class="tap-hint">Tap to view</div>
+  <div class="media-container">
+    <img src="image/Granada.jpg" alt="BGH" class="preview-image">
+    <iframe class="sketchfab-embed"
+      src="https://sketchfab.com/models/4749842954bf4e0db9c8498272949140/embed?autospin=1"
+      frameborder="0" allowfullscreen
+      allow="autoplay; fullscreen; xr-spatial-tracking"
+      allowxr="true"
+      style="display: none;">
+    </iframe>
+    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this)">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <div class="layer">
+              <h3>Granade Prop</h3>
+          <p>
+            The project involved creating a realistic 3D grenade model optimized for offline rendering and real-time use in games and VR.
+          </p>
+    <div class="icon-buttons">
+      <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
+      <a href="#" onclick="toggleSketchfab(this)">
+        <i class="fa-solid fa-eye"></i>
+      </a>
+    </div>
+     <div class="used-programs">
+            <img src="image/maya.png" alt="Substance Painter" title="Substance Painter">
+          </div>
+    </div>
+</div>
+            <div class="work">
+
                 <img src="image/Granada.jpg">
                 <div class="layer">
                     <h3>Granade Prop</h3>
@@ -166,7 +193,6 @@
                 </div>
             </div>
             <div class="work">
-              <div class="tap-hint">Tap to view</div>
                 <img src="image/NatNav24.png">
                 <div class="layer">
                     <h3>Natura Christmas Reels</h3>
@@ -175,7 +201,6 @@
                 </div>
             </div>
 <div class="work">
- <div class="tap-hint">Tap to view</div>
   <img src="image/Hamburger.jpg">
   <div class="layer">
     <h3>Local Burger (REEL)</h3>
@@ -751,8 +776,40 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth <= 768) {
+    const works = document.querySelectorAll(".work");
 
+    works.forEach(work => {
+      const hint = work.querySelector(".tap-hint");
+      const layer = work.querySelector(".layer");
+
+      // Solo mostrar el hint si la layer NO está visible
+      if (layer && window.getComputedStyle(layer).height === "0px") {
+        if (hint) hint.style.display = "block";
+      } else {
+        if (hint) hint.style.display = "none";
+      }
+
+      // Toggle al hacer click
+      work.addEventListener("click", () => {
+        const isOpen = work.classList.contains("layer-open");
+
+        if (isOpen) {
+          work.classList.remove("layer-open");
+          if (hint) hint.style.display = "block";
+        } else {
+          work.classList.add("layer-open");
+          if (hint) hint.style.display = "none";
+        }
+      });
+    });
+  }
+});
+</script>
 
 </body>
 </html>
+
 

@@ -125,7 +125,7 @@
   <div class="media-container">
     <img src="image/bgh.png" alt="BGH" class="preview-image">
     <iframe class="sketchfab-embed"
-      src="https://sketchfab.com/models/1ae0eac35e9541fc96cc0b78933a4fb2/embed?autospin=1&preload=1"
+      src="https://sketchfab.com/models/4749842954bf4e0db9c8498272949140/embed?autospin=1"
       frameborder="0" allowfullscreen
       allow="autoplay; fullscreen; xr-spatial-tracking"
       allowxr="true"
@@ -136,7 +136,7 @@
     </button>
   </div>
   <div class="layer">
-              <h3>BGH - VRF</h3>
+              <h3>BGH</h3>
           <p>
             Proyecto de texturizado 3D centrado en el realismo y envejecimiento de un Volkswagen Beetle clásico.
           </p>
@@ -170,7 +170,7 @@
     </button>
   </div>
   <div class="layer">
-              <h3>Natura</h3>
+              <h3></h3>
           <p>
             A dynamic and engaging social media reel featuring 3D modeling, liquid simulation, and animation to enhance the brand’s visual impact.
           </p>
@@ -221,20 +221,31 @@
     </div>
 </div>
 <div class="work">
-  <div class="media-container">
-    <img src="image/ERKS.StaRosa.PagPortada.png" alt="BGH" class="preview-image">
-    <iframe class="sketchfab-embed"
-      src="https://sketchfab.com/models/4712d99cf5264fdab42f978fa9200ed7/embed?autospin=1"
+ <div class="media-container">
+  <img src="image/ERKS.StaRosa.PagPortada.png" alt="BGH" class="preview-image">
+  <div class="sketchfab-slider" style="display: none;">
+    <iframe class="sketchfab-embed active" 
+      src="https://sketchfab.com/models/4712d99cf5264fdab42f978fa9200ed7/embed"
       frameborder="0" allowfullscreen
-      allow="autoplay; fullscreen; xr-spatial-tracking"
-      allowxr="true"
-      xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="2560" height="1920" 
-      style="display: none;">
+      allow="autoplay; fullscreen; xr-spatial-tracking" allowxr="true">
     </iframe>
-    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this)">
+    
+    <iframe class="sketchfab-embed" 
+      src="https://sketchfab.com/models/1ae0eac35e9541fc96cc0b78933a4fb2/embed?autospin=1"
+      frameborder="0" allowfullscreen
+      allow="autoplay; fullscreen; xr-spatial-tracking" allowxr="true">
+    </iframe>
+
+    <!-- Flechas -->
+    <button class="slider-arrow left" onclick="prevSketchfabModel()">&#10094;</button>
+    <button class="slider-arrow right" onclick="nextSketchfabModel()">&#10095;</button>
+
+    <!-- Cierre -->
+    <button class="close-sketchfab" onclick="closeSketchfabSlider()">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
+</div>
   <div class="layer">
               <h3>Santa Rosa - Una tormenta de sabor</h3>
           <p>
@@ -242,7 +253,7 @@
           </p>
     <div class="icon-buttons">
       <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
-      <a href="#" onclick="toggleSketchfab(this)">
+      <a href="#" onclick="toggleSketchfab(this, event)">
         <i class="fa-solid fa-eye"></i>
       </a>
     </div>
@@ -257,7 +268,7 @@
   <div class="media-container">
     <img src="image/VMW_Portada.png" alt="Volkswagen Beetle" class="preview-image">
     <iframe class="sketchfab-embed"
-      src="https://sketchfab.com/models/4712d99cf5264fdab42f978fa9200ed7/embed?autospin=1&ui_hint=0"
+      src="https://sketchfab.com/models/4749842954bf4e0db9c8498272949140/embed?autospin=1"
       frameborder="0" allowfullscreen
       allow="autoplay; fullscreen; xr-spatial-tracking"
       allowxr="true"
@@ -362,7 +373,7 @@
     </button>
   </div>
   <div class="layer">
-              <h3>Natura</h3>
+              <h3>Natura Christmas Reels</h3>
           <p>
             The project uses VFX and 3D to highlight a restaurant on social media through an engaging visual narrative.
           </p>
@@ -924,7 +935,58 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+<script>
+  let currentSketchfabIndex = 0;
 
+  function toggleSketchfab(el, event) {
+    if (event) event.preventDefault();
+
+    const workElement = el.closest('.work');
+    const slider = workElement.querySelector('.sketchfab-slider');
+    const textContainer = workElement.querySelector('.layer'); // ✅ Seleccionamos la descripción específica
+
+    slider.style.display = 'block';
+    textContainer.style.display = 'none'; // ✅ Oculta la descripción
+    currentSketchfabIndex = 0;
+    showSketchfab(currentSketchfabIndex, slider);
+  }
+
+  function closeSketchfabSlider() {
+    const sliders = document.querySelectorAll('.sketchfab-slider');
+
+    sliders.forEach(slider => {
+      const workElement = slider.closest('.work');
+      const textContainer = workElement.querySelector('.layer'); // ✅ Seleccionamos la descripción específica
+
+      slider.style.display = 'none';
+      textContainer.style.display = 'flex'; // ✅ Muestra la descripción
+    });
+  }
+
+  function showSketchfab(index, slider) {
+    const iframes = slider.querySelectorAll('iframe');
+
+    iframes.forEach((iframe, i) => {
+      iframe.classList.toggle('active', i === index);
+    });
+  }
+
+  function prevSketchfabModel() {
+    const activeSlider = document.querySelector('.sketchfab-slider:has(iframe)');
+    const iframes = activeSlider.querySelectorAll('iframe');
+    currentSketchfabIndex = (currentSketchfabIndex - 1 + iframes.length) % iframes.length;
+    showSketchfab(currentSketchfabIndex, activeSlider);
+  }
+
+  function nextSketchfabModel() {
+    const activeSlider = document.querySelector('.sketchfab-slider:has(iframe)');
+    const iframes = activeSlider.querySelectorAll('iframe');
+    currentSketchfabIndex = (currentSketchfabIndex + 1) % iframes.length;
+    showSketchfab(currentSketchfabIndex, activeSlider);
+  }
+</script>
 </body>
 </html>
+
+
 

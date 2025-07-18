@@ -121,39 +121,37 @@
 <div id="portfolio">
     <div class="container">
         <div class="work-list">
-           <div class="work">
- <div class="media-container">
-  <img src="image/bgh.png" alt="BGH" class="preview-image">
-  <div class="sketchfab-slider" style="display: none;">
-    <iframe class="sketchfab-embed active" 
-      src="https://sketchfab.com/models/1ae0eac35e9541fc96cc0b78933a4fb2/embed?autospin=1"
+            <div class="work">
+  <div class="media-container">
+    <img src="image/bgh.png" alt="BGH" class="preview-image">
+    <iframe class="sketchfab-embed"
+      src="https://sketchfab.com/models/4749842954bf4e0db9c8498272949140/embed?autospin=1"
       frameborder="0" allowfullscreen
-      allow="autoplay; fullscreen; xr-spatial-tracking" allowxr="true">
+      allow="autoplay; fullscreen; xr-spatial-tracking"
+      allowxr="true"
+      style="display: none;">
     </iframe>
-
-    <!-- Cierre -->
-    <button class="close-sketchfab" onclick="closeSketchfabSlider()">
+    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this)">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
-</div>
   <div class="layer">
-              <h3>BGH - VRF</h3>
+              <h3>BGH</h3>
           <p>
-            Modeling and texturing of products for an advertising billboard campaign for Quesos Santa Rosa, ensuring a high level of realism and visual quality.
+            Proyecto de texturizado 3D centrado en el realismo y envejecimiento de un Volkswagen Beetle clásico.
           </p>
     <div class="icon-buttons">
       <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
-      <a href="#" onclick="toggleSketchfab(this, event)">
+      <a href="#" onclick="toggleSketchfab(this)">
         <i class="fa-solid fa-eye"></i>
       </a>
     </div>
      <div class="used-programs">
             <img src="image/maya.png" alt="Substance Painter" title="Substance Painter">
             <img src="image/substance.png" alt="Substance Painter" title="Substance Painter">
-            <img src="image/after-effects.png" alt="Substance Painter" title="Substance Painter">
-            <img src="image/premiere.png" alt="Substance Painter" title="Substance Painter">
-            <img src="image/python.png" alt="Substance Painter" title="Substance Painter">          
+            <img src="image/after-effects.png" alt="Blender" title="Blender">
+            <img src="image/premiere.png" alt="Photoshop" title="Photoshop">
+            <img src="image/python.png" alt="Photoshop" title="Photoshop">
           </div>
     </div>
 </div>
@@ -989,5 +987,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
+
 
 

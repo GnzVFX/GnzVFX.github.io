@@ -231,7 +231,7 @@
     </iframe>
     
     <iframe class="sketchfab-embed" 
-      src="https://sketchfab.com/models/7e57c91635554209a432da24f1963993/embed?autospin=1"
+      src="https://sketchfab.com/models/7e57c91635554209a432da24f1963993/embed"
       frameborder="0" allowfullscreen
       allow="autoplay; fullscreen; xr-spatial-tracking" allowxr="true">
     </iframe>
@@ -302,32 +302,50 @@
     </div>
 </div>
 <div class="work">
-  <div class="media-container">
-    <img src="image/gamma.jpg" alt="Volkswagen Beetle" class="preview-image">
-    <iframe class="sketchfab-embed"
-      src="https://sketchfab.com/models/4749842954bf4e0db9c8498272949140/embed?autospin=1"
+ <div class="media-container">
+  <img src="image/gamma.jpg" alt="BGH" class="preview-image">
+  <div class="sketchfab-slider" style="display: none;">
+    <iframe class="sketchfab-embed active" 
+      src="https://sketchfab.com/models/8560f4f1f0c242b4ac752e026ccceeb0/embed?autospin=1"
       frameborder="0" allowfullscreen
-      allow="autoplay; fullscreen; xr-spatial-tracking"
-      allowxr="true"
-      style="display: none;">
+      allow="autoplay; fullscreen; xr-spatial-tracking" allowxr="true">
     </iframe>
-    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this)">
+    
+    <iframe class="sketchfab-embed" 
+      src="https://sketchfab.com/models/7e57c91635554209a432da24f1963993/embed?autospin=1"
+      frameborder="0" allowfullscreen
+      allow="autoplay; fullscreen; xr-spatial-tracking" allowxr="true">
+    </iframe>
+
+        <iframe class="sketchfab-embed" 
+      src="https://sketchfab.com/models/57219d41cb284dc79e22955342caa99c/embed?autospin=1"
+      frameborder="0" allowfullscreen
+      allow="autoplay; fullscreen; xr-spatial-tracking" allowxr="true">
+    </iframe>
+
+    <!-- Flechas -->
+    <button class="slider-arrow left" onclick="prevSketchfabModel()">&#10094;</button>
+    <button class="slider-arrow right" onclick="nextSketchfabModel()">&#10095;</button>
+
+    <!-- Cierre -->
+    <button class="close-sketchfab" onclick="closeSketchfabSlider()">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
+</div>
   <div class="layer">
               <h3>GAMMA</h3>
           <p>
-            3D texturing of a classic Volkswagen Beetle with a focus on realism and aging. Worn materials, rust, and dirt were applied.
+           3D texturing of a classic Volkswagen Beetle with a focus on realism and aging. Worn materials, rust, and dirt were applied.
           </p>
     <div class="icon-buttons">
       <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
-      <a href="#" onclick="toggleSketchfab(this)">
+      <a href="#" onclick="toggleSketchfabSlider(this, event)">
         <i class="fa-solid fa-eye"></i>
       </a>
     </div>
      <div class="used-programs">
-            <img src="image/maya.png" alt="Substance Painter" title="Substance Painter">
+            <img src="image/maya.png" alt="Substance Painter" title="Substance Painter">       
           </div>
     </div>
 </div>

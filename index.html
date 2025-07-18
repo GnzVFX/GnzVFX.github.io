@@ -121,17 +121,17 @@
 <div id="portfolio">
     <div class="container">
         <div class="work-list">
-            <div class="work">
+           <div class="work">
   <div class="media-container">
     <img src="image/bgh.png" alt="BGH" class="preview-image">
     <iframe class="sketchfab-embed"
-      src="https://sketchfab.com/models/4749842954bf4e0db9c8498272949140/embed?autospin=1"
+      src="https://sketchfab.com/models/1ae0eac35e9541fc96cc0b78933a4fb2/embed"
       frameborder="0" allowfullscreen
       allow="autoplay; fullscreen; xr-spatial-tracking"
       allowxr="true"
       style="display: none;">
     </iframe>
-    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this)">
+    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this, event)">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
@@ -142,7 +142,7 @@
           </p>
     <div class="icon-buttons">
       <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
-      <a href="#" onclick="toggleSketchfab(this)">
+      <a href="#" onclick="toggleSketchfab(this, event)">
         <i class="fa-solid fa-eye"></i>
       </a>
     </div>
@@ -159,13 +159,13 @@
   <div class="media-container">
     <img src="image/NaturaReels2.png" alt="BGH" class="preview-image">
     <iframe class="sketchfab-embed"
-      src="https://sketchfab.com/models/4749842954bf4e0db9c8498272949140/embed?autospin=1"
+      src="https://sketchfab.com/models/1ae0eac35e9541fc96cc0b78933a4fb2/embed"
       frameborder="0" allowfullscreen
       allow="autoplay; fullscreen; xr-spatial-tracking"
       allowxr="true"
       style="display: none;">
     </iframe>
-    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this)">
+    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this, event)">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
@@ -176,7 +176,7 @@
           </p>
     <div class="icon-buttons">
       <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
-      <a href="#" onclick="toggleSketchfab(this)">
+      <a href="#" onclick="toggleSketchfab(this, event)">
         <i class="fa-solid fa-eye"></i>
       </a>
     </div>
@@ -198,7 +198,7 @@
       allowxr="true"
       style="display: none;">
     </iframe>
-    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this)">
+    <button class="close-sketchfab" style="display: none;" onclick="toggleSketchfab(this, event)">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
@@ -209,7 +209,7 @@
           </p>
     <div class="icon-buttons">
       <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
-      <a href="#" onclick="toggleSketchfab(this)">
+      <a href="#" onclick="toggleSketchfab(this, event)">
         <i class="fa-solid fa-eye"></i>
       </a>
     </div>
@@ -236,6 +236,12 @@
       allow="autoplay; fullscreen; xr-spatial-tracking" allowxr="true">
     </iframe>
 
+        <iframe class="sketchfab-embed" 
+      src="https://sketchfab.com/models/066c5dab3ae646e8b7e60bbac25bd83b/embed?autospin=1"
+      frameborder="0" allowfullscreen
+      allow="autoplay; fullscreen; xr-spatial-tracking" allowxr="true">
+    </iframe>
+
     <!-- Flechas -->
     <button class="slider-arrow left" onclick="prevSketchfabModel()">&#10094;</button>
     <button class="slider-arrow right" onclick="nextSketchfabModel()">&#10095;</button>
@@ -253,7 +259,7 @@
           </p>
     <div class="icon-buttons">
       <a href="#" class="open-modal fa-solid fa-play" data-video="https://player.vimeo.com/video/1063867874"></a>
-      <a href="#" onclick="toggleSketchfab(this, event)">
+      <a href="#" onclick="toggleSketchfabSlider(this, event)">
         <i class="fa-solid fa-eye"></i>
       </a>
     </div>
@@ -936,57 +942,102 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <script>
-  let currentSketchfabIndex = 0;
+// Función para proyectos con iframe único
+function toggleSketchfab(button) {
+  event.preventDefault();
+  const work = button.closest('.work');
+  const img = work.querySelector('.preview-image');
+  const sketchfab = work.querySelector('.sketchfab-embed');
+  const overlay = work.querySelector('.layer');
+  const toggleIcon = button.querySelector('.fa-eye, .fa-xmark');
+  const closeBtn = work.querySelector('.close-sketchfab');
 
-  function toggleSketchfab(el, event) {
-    if (event) event.preventDefault();
+  if (!sketchfab) return; // Previene error si no hay iframe
 
-    const workElement = el.closest('.work');
-    const slider = workElement.querySelector('.sketchfab-slider');
-    const textContainer = workElement.querySelector('.layer'); // ✅ Seleccionamos la descripción específica
+  const isVisible = sketchfab.style.display === 'block';
 
-    slider.style.display = 'block';
-    textContainer.style.display = 'none'; // ✅ Oculta la descripción
-    currentSketchfabIndex = 0;
-    showSketchfab(currentSketchfabIndex, slider);
+  if (!isVisible) {
+    if (img) img.style.display = 'none';
+    sketchfab.style.display = 'block';
+    if (overlay) {
+      overlay.style.pointerEvents = 'none';
+      overlay.style.opacity = '0';
+    }
+    if (toggleIcon) {
+      toggleIcon.classList.remove('fa-eye');
+      toggleIcon.classList.add('fa-xmark');
+    }
+    if (closeBtn) {
+      closeBtn.style.display = 'block';
+    }
+  } else {
+    if (img) img.style.display = 'block';
+    sketchfab.style.display = 'none';
+    if (overlay) {
+      overlay.style.pointerEvents = 'auto';
+      overlay.style.opacity = '1';
+    }
+    if (toggleIcon) {
+      toggleIcon.classList.remove('fa-xmark');
+      toggleIcon.classList.add('fa-eye');
+    }
+    if (closeBtn) {
+      closeBtn.style.display = 'none';
+    }
   }
+}
 
-  function closeSketchfabSlider() {
-    const sliders = document.querySelectorAll('.sketchfab-slider');
+// Función para slider de modelos (caso Santa Rosa)
+let currentSketchfabIndex = 0;
 
-    sliders.forEach(slider => {
-      const workElement = slider.closest('.work');
-      const textContainer = workElement.querySelector('.layer'); // ✅ Seleccionamos la descripción específica
+function toggleSketchfabSlider(el, event) {
+  if (event) event.preventDefault();
 
-      slider.style.display = 'none';
-      textContainer.style.display = 'flex'; // ✅ Muestra la descripción
-    });
-  }
+  const workElement = el.closest('.work');
+  const slider = workElement.querySelector('.sketchfab-slider');
+  const textContainer = workElement.querySelector('.layer');
 
-  function showSketchfab(index, slider) {
-    const iframes = slider.querySelectorAll('iframe');
+  if (!slider || !textContainer) return;
 
-    iframes.forEach((iframe, i) => {
-      iframe.classList.toggle('active', i === index);
-    });
-  }
+  slider.style.display = 'block';
+  textContainer.style.display = 'none';
+  currentSketchfabIndex = 0;
+  showSketchfab(currentSketchfabIndex, slider);
+}
 
-  function prevSketchfabModel() {
-    const activeSlider = document.querySelector('.sketchfab-slider:has(iframe)');
-    const iframes = activeSlider.querySelectorAll('iframe');
-    currentSketchfabIndex = (currentSketchfabIndex - 1 + iframes.length) % iframes.length;
-    showSketchfab(currentSketchfabIndex, activeSlider);
-  }
+function closeSketchfabSlider() {
+  const sliders = document.querySelectorAll('.sketchfab-slider');
+  sliders.forEach(slider => {
+    const workElement = slider.closest('.work');
+    const textContainer = workElement.querySelector('.layer');
+    slider.style.display = 'none';
+    textContainer.style.display = 'flex';
+  });
+}
 
-  function nextSketchfabModel() {
-    const activeSlider = document.querySelector('.sketchfab-slider:has(iframe)');
-    const iframes = activeSlider.querySelectorAll('iframe');
-    currentSketchfabIndex = (currentSketchfabIndex + 1) % iframes.length;
-    showSketchfab(currentSketchfabIndex, activeSlider);
-  }
+function showSketchfab(index, slider) {
+  const iframes = slider.querySelectorAll('iframe');
+  iframes.forEach((iframe, i) => {
+    iframe.classList.toggle('active', i === index);
+  });
+}
+
+function prevSketchfabModel() {
+  const activeSlider = document.querySelector('.sketchfab-slider:has(iframe)');
+  const iframes = activeSlider.querySelectorAll('iframe');
+  currentSketchfabIndex = (currentSketchfabIndex - 1 + iframes.length) % iframes.length;
+  showSketchfab(currentSketchfabIndex, activeSlider);
+}
+
+function nextSketchfabModel() {
+  const activeSlider = document.querySelector('.sketchfab-slider:has(iframe)');
+  const iframes = activeSlider.querySelectorAll('iframe');
+  currentSketchfabIndex = (currentSketchfabIndex + 1) % iframes.length;
+  showSketchfab(currentSketchfabIndex, activeSlider);
+}
 </script>
+
 </body>
 </html>
-
 
 

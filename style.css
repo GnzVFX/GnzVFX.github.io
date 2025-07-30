@@ -27,8 +27,6 @@ body {
     scrollbar-color: rgba(255, 255, 255, 0.5) transparent; /* Thumb blanco y sin fondo */
 }
 *{
-    margin: 0;
-    padding: 0;
     font-family: 'poppins', sans-serif;
     box-sizing: border-box;
 }
@@ -36,7 +34,6 @@ html{
     scroll-behavior: smooth;
 }
 body {
-    overflow-y: scroll; /* Habilita el scroll vertical */
     scrollbar-width: thin; /* Hace la barra más delgada (para Firefox) */
     scrollbar-color: #080808; /* Color de la barra y fondo */
 }
@@ -69,6 +66,16 @@ nav {
     left: 0;
     z-index: 1000; /* Asegura que esté sobre otros elementos */
 }
+.fa-bars {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 33px;
+  z-index: 1000;
+  cursor: pointer;
+  color: #19334a;
+}
 #header video {
     position: absolute;
     top: 50%;
@@ -79,6 +86,17 @@ nav {
     object-fit: cover;
     z-index: -1;
 }
+nav ul .fa-xmark {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
     #background-video {
   position: absolute;
   top: 0;
@@ -95,7 +113,7 @@ nav {
     text-align: center;
 }
 .container{
-    padding:8px 5%;   
+    padding:10px 5%;   
 }
 
 nav{
@@ -177,6 +195,8 @@ nav ul li a:hover::after{
 /* -------------about------------- */
 #about{
     color: #fff;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 .row{
@@ -196,8 +216,9 @@ nav ul li a:hover::after{
     object-fit: cover;
 }
 .about-col-2{
-    flex-basis: 60%;
+    flex-basis: 66%;
     font-size: medium;
+    margin-top: 20px;
 }
 
 .sub-tittle{
@@ -208,7 +229,7 @@ nav ul li a:hover::after{
 
 .tab-titles{
     display: flex;
-    margin: 15px 0 40px;
+    margin: 23px 0 40px;
 }
 .tab-links{
     margin-right: 50px;
@@ -309,18 +330,21 @@ nav ul li a:hover::after{
 /* -------------services------------- */
     }
 #services{
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.8) 100%), 
-                url(image/background2.png);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgb(8 8 8) 100%), linear-gradient(to top, rgba(0, 0, 0, 0) 80%, rgb(8 8 8) 100%), url(image/background2.png);
     background-size: cover;
     background-position: center;
+    padding: 200px
 }
 .services-list {
-    width: 30%; /* Antes 20%, ahora es más ancho para que los cuadros sean más pequeños */
-    flex-direction: column; /* Los elementos se apilan verticalmente */
-    display: flex;
-    align-items: center; /* Centra los cuadros */
-    margin-left: 10%; /* Centra el contenedor en la página */
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
+
 .services-list div{
     background: rgb(34, 51, 67);
     padding: 40px;
@@ -330,6 +354,7 @@ nav ul li a:hover::after{
     border-radius: 7px;
     transition: background 0.5s, transform 0.5s;
 }
+
 .services-list div i{
     font-size: 50px;
     margin-bottom: 30px;
@@ -656,7 +681,7 @@ margin-top: 5px;
 
   .logo {
     position: absolute;
-    top: 10px;
+    top: 15px;
     left: 50%;
     transform: translateX(-50%);
     width: 130px;
@@ -665,6 +690,7 @@ margin-top: 5px;
   }
 
   nav .fa-bars {
+    display: block;
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -827,25 +853,15 @@ margin-top: 5px;
 
 /* Asegurate que el logo y botones tengan z-index mayor que 2 */
 .logo {
-  position: absolute;
   z-index: 10;
+  margin-left: 70px;
+  margin-top: 10px;
 }
 
 #music-toggle,
 nav .fa-bars {
   z-index: 1000;
 }
-.services-list {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: auto;
-}
-
 .services-list div {
   background-color: #19334a;
   color: white;
@@ -868,7 +884,7 @@ nav .fa-bars {
   font-size: 14px;
   line-height: 1.4;
 }
-
+@media (max-width: 768px) {
 @keyframes slideUpLogo {
   from {
     transform: translate(-50%, 0);
@@ -890,7 +906,7 @@ nav .fa-bars {
     opacity: 1;
   }
 }
-
+}
 .logo.scroll-up {
   animation: slideUpLogo 0.4s forwards ease-in;
 }
@@ -1026,7 +1042,6 @@ nav .fa-bars {
 .contact-right form textarea,
 .contact-right form button {
   font-size: 16px;
-  padding: 12px;
 }
 
 .contact-right form textarea {
@@ -1102,6 +1117,7 @@ nav .fa-bars {
   .services-list {
     position: relative;
     z-index: 0;
+    width: 100%
   }
 }
 @media (max-width: 768px) {
@@ -1408,4 +1424,23 @@ display: none; /* ocultamos el video en mobile si no lo querés activo */
   font-size: 24px;
   cursor: pointer;
   z-index: 10;
+}
+
+@media (max-width: 768px) {
+*{
+    margin: 0;
+    padding: 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+  .logo {
+ margin: auto;
+}
+}
+@media (max-width: 768px) {
+#services{
+    padding: 10px
+}
 }

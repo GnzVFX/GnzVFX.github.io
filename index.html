@@ -8,6 +8,12 @@
     <script src="https://kit.fontawesome.com/6cf57bfc06.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="loader">
+  <div class="loader-content">
+    <img src="image/Logo.png" alt="Logo GNZ" />
+    <div class="spinner"></div>
+  </div>
+</div>
     <div id="music-toggle">
     <img id="music-icon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music Icon">
 </div>
@@ -1107,6 +1113,15 @@ function nextSketchfabModel() {
     }
   });
 }
+</script>
+<script>
+  window.addEventListener("load", function () {
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 500); // tiempo para el fade-out
+  });
 </script>
 
 
